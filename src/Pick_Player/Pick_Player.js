@@ -5,37 +5,36 @@ export class PickPlayer extends Component {
         super(props)
     
         this.state = {
-            selectedPlayer: [],
-            players: 2,
+            selectePlayer: [],
         }
     }
 
     populateCharacters = () => {
-        
+        console.log(this.props.allCharacters)
+       return this.props.allCharacters.map((character) => {
+           return(<option value={character}>{character.name}</option>)
+        })
     }
 
     populatePlayers = () => {
-         for (let i = 0; i < this.state.players; i++) {
-            return (
+        let allPlayers = []
+         for (let i = 0; i < this.props.playerCount; i++) {
+            allPlayers.push(
                 <section>
                     <p>Player {i + 1} select your character</p>
                     <select>
-                        <option value='Jame Potter'>Jame Potter</option>
-                        <option value='Trevor'>Trevor</option>
+                        {this.populateCharacters()}
                     </select>
                 </section>
             )
          }
+         return allPlayers
     }
     
     render() {
         return (
             <section>
-                <p>pick player</p>
-                <select>
-                    <option value='Jame Potter'>Jame Potter</option>
-                    <option value='Trevor'>Trevor</option>
-                </select>
+                {this.populatePlayers()}
                 <button>
                     Submit
                 </button>
