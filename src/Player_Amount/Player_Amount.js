@@ -13,7 +13,7 @@ export class PlayerAmount extends Component {
     const {name, value} = event.target
     this.setState({[name]: value})
   }
-  
+
   render() {
     return (
         <section>
@@ -29,7 +29,7 @@ export class PlayerAmount extends Component {
         <button
           role="button"
           type="button"
-          disabled
+          disabled={this.state.players > 8 || this.state.players < 2}
           className="login-submit"
           onClick={() => console.log('Fog')}
         >
