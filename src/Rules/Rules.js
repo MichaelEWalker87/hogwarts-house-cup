@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
 
-export class Rules extends Component {
+class Rules extends Component {
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+             
+    }
+  }
+    
   render() {
     return (
-        <section>
-            <p>Rules</p>  
-        </section>
+      <section>
+        <p>Rules</p>  
+      </section>
     )
   }
 }
