@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Player_Amount = () => {
+const PlayerAmount = () => {
     return (
         <section>
             <p>Player Amount</p>
@@ -8,6 +8,6 @@ const Player_Amount = () => {
     )
 }
 
-export default Player_Amount
+export default PlayerAmount
 
 

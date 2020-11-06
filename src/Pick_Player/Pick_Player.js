@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Pick_Player = () => {
+const PickPlayer = () => {
     return (
         <section>
             <p>pick player</p>
@@ -8,4 +8,4 @@ const Pick_Player = () => {
     )
 }
 
-export default Pick_Player
+export default PickPlayer

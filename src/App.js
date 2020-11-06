@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import QuickStart from './Quick_Start/Quick_Start.js'
-import Player_Amount from './Player_Amount/Player_Amount.js'
+import PlayerAmount from './Player_Amount/Player_Amount.js'
 import Rules from './Rules/Rules.js'
+import PickPlayer from './Pick_Player/Pick_Player.js'
 
 class App extends Component {
   constructor() {
@@ -15,10 +16,11 @@ class App extends Component {
   render() {
     return (
       <section>
-        <h1>Enter in the amount</h1>
+        <h1>Home</h1>
         <QuickStart /> 
-        <Player_Amount />
+        <PlayerAmount />
         <Rules />
+        <PickPlayer />
       </section>
     )
   }
