@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 
-export class Player_Amount extends Component {
+export class PlayerAmount extends Component {
   constructor() {
     super()
   
     this.state = {
-       
+       players:2,
     }
+  }
+
+  handleChange = (event) => {
+    const {name, value} = event.target
+    this.setState({[name]: value})
   }
   
   render() {
@@ -15,17 +20,18 @@ export class Player_Amount extends Component {
         <label>Pick The Amount Of Players</label>
         <input
           type='number'
-          name='Amount of Players Input'
+          name='players'
           min={2}
           max={8}
-          value=''
-          onChange=''
+          value={this.state.players}
+          onChange={this.handleChange}
         />
         <button
           role="button"
           type="button"
+          disabled
           className="login-submit"
-          onClick=''
+          onClick={() => console.log('Fog')}
         >
           Submit
         </button>
@@ -34,5 +40,5 @@ export class Player_Amount extends Component {
   }
 }
 
-export default Player_Amount
+export default PlayerAmount
 
