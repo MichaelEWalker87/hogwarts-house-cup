@@ -10,7 +10,10 @@ const Gameplay = () => {
       <label>
         Go to pick player amount
       </label>
-      <Link to="/">
+      <Link 
+        to="/" 
+        label="Home"
+      >
         <button>
           Go To Start
         </button>

@@ -51,7 +51,10 @@ export class PickPlayer extends Component {
         return (
             <section>
                 {this.populatePlayers()}
-                <Link to="/quickstart">
+                <Link 
+                    to="/quickstart"
+                    label="quickstart"
+                >
                     <button
                     type='button'
                     disabled={this.state.currentPlayers.length != this.props.playerCount}

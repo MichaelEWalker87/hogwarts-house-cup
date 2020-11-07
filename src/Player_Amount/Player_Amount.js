@@ -27,7 +27,10 @@ export class PlayerAmount extends Component {
           value={this.state.players}
           onChange={this.handleChange}
         />
-        <Link to="/select-character">
+        <Link 
+          to="/select-character"
+          label="select-character"
+        >
           <button
             role="button"
             type="button"

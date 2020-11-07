@@ -13,7 +13,10 @@ const QuickStart = () => {
         <label>
           Quickstart 
         </label>
-        <Link to="/gameplay">
+        <Link 
+          to="/gameplay"
+          label="gameplay"
+        >
           <button>
             Start
           </button>
@@ -23,7 +26,10 @@ const QuickStart = () => {
         <label>
           Add A Game Rule 
         </label>
-        <Link to="/rules">
+        <Link 
+          to="/rules"
+          label="rules"
+        >
           <button>
             Rules
           </button>

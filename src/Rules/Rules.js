@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 class Rules extends Component {
   constructor(props) {
@@ -20,7 +21,12 @@ class Rules extends Component {
           // onChange=''
         />
         <button>Submit Rule</button> 
-        <button>Start Game</button>
+        <Link
+          to="/gameplay"
+          label="gameplay"
+        >
+          <button>Start Game</button>
+        </Link>
       </section>
     )
   }
