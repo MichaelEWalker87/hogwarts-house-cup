@@ -10,7 +10,7 @@ class App extends Component {
     super()
     this.state = {
       allCharacters: [],
-      playerCount: 2,
+      playerCount:this.playerCount || 0,
       selectedPlayers: [],
       characterNames: [],
       allPlayerStatCards: [],
