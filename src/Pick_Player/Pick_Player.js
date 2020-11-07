@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link, Redirect } from 'react-router-dom';
 
 export class PickPlayer extends Component {
     constructor(props) {
@@ -6,6 +7,8 @@ export class PickPlayer extends Component {
     
         this.state = {
             currentPlayers: [],
+            error: '', 
+            redirect: false,
         }
     }
 
@@ -38,25 +41,30 @@ export class PickPlayer extends Component {
         this.setState({currentPlayers:copy});
     }
 
-    handleSubmit = () => {
+    handleSubmit =  () => {
         if(this.state.currentPlayers.includes("-1")){
-            alert('All Players Must Pick A Vaild Character Name')
+           this.setState({error: 'All Players Must Pick A Vaild Character Name'})
         } else {
           this.props.updateselectedPlayers(this.state.currentPlayers)
+          this.setState({redirect: true})
         }
     }
 
     render() {
         return (
             <section>
+                <h2>
+                    {this.state.error}
+                </h2>
                 {this.populatePlayers()}
-                <button
-                  type='button'
-                  disabled={this.state.currentPlayers.length != this.props.playerCount}
-                  onClick={this.handleSubmit}
-                >
-                  Submit
-                </button>
+                    <button
+                    type='button'
+                    disabled={this.state.currentPlayers.length != this.props.playerCount}
+                    onClick={this.handleSubmit}
+                    >
+                        Submit
+                    </button>
+                    {this.state.redirect && <Redirect to="/quickstart"/>}
             </section>  
         )
     }

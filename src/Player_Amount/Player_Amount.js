@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 export class PlayerAmount extends Component {
   constructor(props) {
@@ -26,15 +27,20 @@ export class PlayerAmount extends Component {
           value={this.state.players}
           onChange={this.handleChange}
         />
-        <button
-          role="button"
-          type="button"
-          disabled={this.state.players > 8 || this.state.players < 2}
-          className="login-submit"
-          onClick={() => this.props.updatePlayercount(this.state.players)}
+        <Link 
+          to="/select-character"
+          label="select-character"
         >
-          Submit
-        </button>
+          <button
+            role="button"
+            type="button"
+            disabled={this.state.players > 8 || this.state.players < 2}
+            className="login-submit"
+            onClick={() => this.props.updatePlayercount(this.state.players)}
+          >
+            Submit
+          </button>
+        </Link>
       </section>
     )
   }

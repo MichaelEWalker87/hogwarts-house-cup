@@ -56,16 +56,20 @@ class App extends Component {
   render() {
     return (
       <section>
-        <QuickStart /> 
-        <PlayerAmount updatePlayercount={this.updatePlayercount}/>
-        <Rules />
-        <PickPlayer 
-          playerCount={this.state.playerCount} 
-          updateselectedPlayers={this.updateselectedPlayers}
-          characterNames={this.state.characterNames}
-          getAllPlayerStatCards={this.getAllPlayerStatCards}
+        <Route exact path='/' render={ () => 
+          <PlayerAmount updatePlayercount={this.updatePlayercount}/>} 
         />
-        <Gameplay />
+        <Route exact path='/select-character' render={ () => 
+          <PickPlayer 
+            playerCount={this.state.playerCount} 
+            updateselectedPlayers={this.updateselectedPlayers}
+            characterNames={this.state.characterNames}
+            getAllPlayerStatCards={this.getAllPlayerStatCards}
+          />} 
+        />
+        <Route exact path='/quickstart' render={ () => <QuickStart /> } />
+        <Route exact path='/rules' render={ () => <Rules />} />
+        <Route exact path='/gameplay' render={ () => <Gameplay /> } />
       </section>
     )
   }
