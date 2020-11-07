@@ -4,6 +4,7 @@ import PlayerAmount from './Player_Amount/Player_Amount.js'
 import Rules from './Rules/Rules.js'
 import PickPlayer from './Pick_Player/Pick_Player.js'
 import { getCharacter } from './Api_calls/API.js'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
