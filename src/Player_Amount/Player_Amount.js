@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 export class PlayerAmount extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   
     this.state = {
        players:2,
@@ -31,7 +31,7 @@ export class PlayerAmount extends Component {
           type="button"
           disabled={this.state.players > 8 || this.state.players < 2}
           className="login-submit"
-          onClick={() => console.log('Fog')}
+          onClick={() => this.props.updatePlayercount(this.state.players)}
         >
           Submit
         </button>
