@@ -52,7 +52,7 @@ export class PickPlayer extends Component {
                 {this.populatePlayers()}
                 <button
                   type='button'
-                  disabled={this.state.currentPlayers.length < this.props.playerCount}
+                  disabled={this.state.currentPlayers.length != this.props.playerCount}
                   onClick={this.handleSubmit}
                 >
                   Submit
