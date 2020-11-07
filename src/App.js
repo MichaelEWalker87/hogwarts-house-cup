@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       allCharacters: [],
       playerCount: 2,
-      selectedPlayers: ['Hannah Abbot'],
+      selectedPlayers: [],
       characterNames: [],
     }
   }
@@ -68,8 +68,8 @@ class App extends Component {
   }
 
   populateCharacters = (characterData) => {
-   return characterData.map((character) => {
-       return(<option value={character.name}>{character.name}</option>)
+   return characterData.map((character, index) => {
+       return(<option key={index} value={character.name}>{character.name}</option>)
     })
   } 
 
