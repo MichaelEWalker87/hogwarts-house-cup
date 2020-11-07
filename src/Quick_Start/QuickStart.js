@@ -9,7 +9,7 @@ const QuickStart = () => {
       </h3>
       <section>
         <label>
-          Quick Start 
+          Quickstart 
         </label>
         <button>
           Start

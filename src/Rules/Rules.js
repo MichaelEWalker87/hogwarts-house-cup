@@ -16,8 +16,8 @@ class Rules extends Component {
         <input
           type='text'
           name='ruleInput'
-          value=''
-          onChange=''
+          // value=''
+          // onChange=''
         />
         <button>Submit Rule</button> 
         <button>Start Game</button>
