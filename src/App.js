@@ -13,6 +13,7 @@ class App extends Component {
       playerCount: 2,
       selectedPlayers: [],
       characterNames: [],
+
     }
   }
   
@@ -24,28 +25,6 @@ class App extends Component {
     this.setState({selectedPlayers: pickedCharacters})
   }
 
-  getAllCharacterStats = () => {
-    if(this.state.selectedPlayers !== []){
-      this.state.selectedPlayers.reduce((acc, selectedPlayer, index) => {
-        let name = [Object.values(selectedPlayer)]
-        this.state.allCharacters.find((character) =>{
-          return character.name === "name"
-        })
-        return acc 
-      }, []); 
-    }
-  }
-  // updateselectedPlayers = (pickedCharacters) => {
-  //   pickedCharacters.forEach(pickedCharacter => {  
-  //     console.log(pickedCharacter) 
-  //     const characters = this.state.allCharacters.find((character, index) => { 
-  //       let counter = index + 1 
-  //       console.log(character)
-  //       return character.name === pickedCharacter[counter]
-  //     })
-  //     this.setState({ selectedPlayers: [...this.state.selectedPlayers, characters] })
-  //   });
-  // }
   // player: 1
   // bloodStatus: "none"
   // deathEater: false
@@ -58,23 +37,33 @@ class App extends Component {
   // school: "none"
   // species: "none"
 
+  GetAllPlayerStatCards = () => {
+    if(this.state.selectedPlayers.length <= 2){
+      let characterStats = this.state.selectedPlayers.map((selectedPlayer) => {
+        return this.state.allCharacters.find((character) => {
+          return character.name === selectedPlayer
+        })
+      })
+      console.log(characterStats)
+    } 
+  }
+
   componentDidMount = () => {
     getCharacter()
     .then(data => {
-      console.log("data", data) 
-      let characterNames = this.populateCharacters(data)
+      let characterNames = this.populateDropDownCharacters(data)
       this.setState({allCharacters: data, characterNames})
     })
   }
 
-  populateCharacters = (characterData) => {
+  populateDropDownCharacters = (characterData) => {
    return characterData.map((character, index) => {
        return(<option key={index} value={character.name}>{character.name}</option>)
     })
   } 
 
   render() {
-    // this.getAllCharacterStats() 
+    this.GetAllPlayerStatCards()
     return (
       <section>
         <h1>Home</h1>
