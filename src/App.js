@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import QuickStart from './Quick_Start/Quick_Start.js'
+import QuickStart from './Quick_Start/QuickStart.js'
 import PlayerAmount from './Player_Amount/Player_Amount.js'
 import Rules from './Rules/Rules.js'
 import PickPlayer from './Pick_Player/Pick_Player.js'
+import Gameplay from './Gameplay/Gameplay.js'
 import { getCharacter } from './Api_calls/API.js'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -54,7 +56,6 @@ class App extends Component {
   render() {
     return (
       <section>
-        <h1>Home</h1>
         <QuickStart /> 
         <PlayerAmount updatePlayercount={this.updatePlayercount}/>
         <Rules />
@@ -64,6 +65,7 @@ class App extends Component {
           characterNames={this.state.characterNames}
           getAllPlayerStatCards={this.getAllPlayerStatCards}
         />
+        <Gameplay />
       </section>
     )
   }

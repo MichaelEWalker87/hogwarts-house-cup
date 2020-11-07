@@ -12,7 +12,15 @@ class Rules extends Component {
   render() {
     return (
       <section>
-        <p>Rules</p>  
+        <h3>Enter in teh rule you would like to see added to the game</h3> 
+        <input
+          type='text'
+          name='ruleInput'
+          value=''
+          onChange=''
+        />
+        <button>Submit Rule</button> 
+        <button>Start Game</button>
       </section>
     )
   }
