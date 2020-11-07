@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 
 const QuickStart = () => {
   return(
@@ -11,17 +13,21 @@ const QuickStart = () => {
         <label>
           Quickstart 
         </label>
-        <button>
-          Start
-        </button>
+        <Link to="/gameplay">
+          <button>
+            Start
+          </button>
+        </Link>
       </section>
       <section>
         <label>
           Add A Game Rule 
         </label>
-        <button>
-          Rules
-        </button>
+        <Link to="/rules">
+          <button>
+            Rules
+          </button>
+        </Link>
       </section>
     </section>
   )
