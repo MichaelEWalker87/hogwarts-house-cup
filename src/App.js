@@ -13,7 +13,7 @@ class App extends Component {
       playerCount: 2,
       selectedPlayers: [],
       characterNames: [],
-
+      allPlayerStatCards: [],
     }
   }
   
@@ -21,30 +21,19 @@ class App extends Component {
     this.setState({playerCount: count})
   }
 
-  updateselectedPlayers = (pickedCharacters) => {
-    this.setState({selectedPlayers: pickedCharacters})
+  updateselectedPlayers = async (pickedCharacters) => {
+    await this.setState({selectedPlayers: pickedCharacters})
+    this.getAllPlayerStatCards()
   }
 
-  // player: 1
-  // bloodStatus: "none"
-  // deathEater: false
-  // dumbledoresArmy: false
-  // house: "none"
-  // ministryOfMagic: false
-  // name: "none"
-  // orderOfThePhoenix: false
-  // role: "none"
-  // school: "none"
-  // species: "none"
-
-  GetAllPlayerStatCards = () => {
+  getAllPlayerStatCards = () => {
     if(this.state.selectedPlayers.length <= 2){
       let characterStats = this.state.selectedPlayers.map((selectedPlayer) => {
         return this.state.allCharacters.find((character) => {
           return character.name === selectedPlayer
         })
       })
-      console.log(characterStats)
+      this.setState({allPlayerStatCards: characterStats})
     } 
   }
 
@@ -63,7 +52,6 @@ class App extends Component {
   } 
 
   render() {
-    this.GetAllPlayerStatCards()
     return (
       <section>
         <h1>Home</h1>
@@ -73,8 +61,8 @@ class App extends Component {
         <PickPlayer 
           playerCount={this.state.playerCount} 
           updateselectedPlayers={this.updateselectedPlayers}
-          allCharacters={this.state.allCharacters}
           characterNames={this.state.characterNames}
+          getAllPlayerStatCards={this.getAllPlayerStatCards}
         />
       </section>
     )
