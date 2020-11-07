@@ -13,7 +13,7 @@ class Rules extends Component {
   render() {
     return (
       <section>
-        <h3>Enter in teh rule you would like to see added to the game</h3> 
+        <h3>Enter in the rule you would like to see added to the game</h3> 
         <input
           type='text'
           name='ruleInput'
