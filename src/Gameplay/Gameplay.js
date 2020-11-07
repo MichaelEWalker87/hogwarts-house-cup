@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Gameplay = () => {
   return (
@@ -9,9 +10,11 @@ const Gameplay = () => {
       <label>
         Go to pick player amount
       </label>
-      <button>
-        Go
-      </button>
+      <Link to="/">
+        <button>
+          Go To Start
+        </button>
+      </Link>
     </section>
   )
 }
