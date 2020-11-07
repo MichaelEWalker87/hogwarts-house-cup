@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 export class PickPlayer extends Component {
     constructor(props) {
@@ -50,13 +51,15 @@ export class PickPlayer extends Component {
         return (
             <section>
                 {this.populatePlayers()}
-                <button
-                  type='button'
-                  disabled={this.state.currentPlayers.length != this.props.playerCount}
-                  onClick={this.handleSubmit}
-                >
-                  Submit
-                </button>
+                <Link to="/quickstart">
+                    <button
+                    type='button'
+                    disabled={this.state.currentPlayers.length != this.props.playerCount}
+                    onClick={this.handleSubmit}
+                    >
+                    Submit
+                    </button>
+                </Link>
             </section>  
         )
     }
