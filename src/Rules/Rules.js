@@ -6,10 +6,14 @@ class Rules extends Component {
     super(props)
     
     this.state = {
-             
+      ruleInput:''
     }
   }
-    
+  
+  updateForm = (event) => {
+    this.setState({[event.target.name]: event.target.value})
+  }
+
   render() {
     return (
       <section>
@@ -17,10 +21,16 @@ class Rules extends Component {
         <input
           type='text'
           name='ruleInput'
-          // value=''
-          // onChange=''
+          value={this.state.ruleInput}
+          onChange={this.updateForm}
         />
-        <button>Submit Rule</button> 
+        <button
+          type="button"
+          name="Submit"
+          disabled={this.state.ruleInput === ''}
+        >
+          Submit Rule
+        </button> 
         <Link
           to="/gameplay"
           label="gameplay"
