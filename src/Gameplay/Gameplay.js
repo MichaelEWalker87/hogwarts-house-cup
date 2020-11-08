@@ -1,36 +1,64 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { questions } from '../Mock_Data/Mock_Data.js'
 
+export class Gameplay extends Component {
+  constructor(props) {
+      super(props)
 
-const Gameplay = () => { 
+      this.state = {
+          question: "",
+          playerCards: []
+      }
+  }
 
-  const getRandomIndex = () => {
+  getRandomIndex = () => {
     let num = Math.floor(Math.random() * questions.length);
-    return questions[num]
+    this.setState({question: questions[num]})
   };
 
-  return (
-    <section>
-      <p>
-        Game play
-      </p>
-      <label>
-        {getRandomIndex()}
-      </label>
-      <button>
+  // makePlayerCards = (props) => {
+  //   this.props.allPlayerStatCards.map((card) => {
+  //    const playerCard = {
+  //      bloodStatus: "unknown",
+  //      boggart: "Lord Voldemort",
+  //      deathEater: false,
+  //      dumbledoresArmy: false,
+  //      house: "Gryffindor",
+  //      ministryOfMagic: false,
+  //      name: "Katie Bell",
+  //      orderOfThePhoenix: false,
+  //      role: card.role || "unknown",
+  //      school: "Hogwarts School of Witchcraft and Wizardry",
+  //      species: "human",
+  //     }
+  //   })
+  // }
 
-      </button>
-      <Link 
-        to="/" 
-        label="Home"
-      >
-        <button>
-          Go To Start
-        </button>
-      </Link>
-    </section>
-  )
+  render(){
+    return (
+      <section>
+        <section>
+          <p>
+            {this.state.question}
+          </p>
+          <button
+            onClick={this.getRandomIndex}
+          >
+            Next 
+          </button>
+        </section>
+        <Link 
+          to="/" 
+          label="Home"
+        >
+          <button>
+            Go To Start
+          </button>
+        </Link>
+      </section>
+    )
+  }
 }
 
 export default Gameplay

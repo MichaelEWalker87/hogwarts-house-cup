@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { questions } from '../Mock_Data/Mock_Data.js'
+
 
 class Rules extends Component {
   constructor(props) {
     super(props)
     
     this.state = {
-      ruleInput:''
+      ruleInput:'',
+      addRuleCount: this.addRuleCount || 0, 
     }
   }
   
@@ -14,7 +17,26 @@ class Rules extends Component {
     this.setState({[event.target.name]: event.target.value})
   }
 
+  updateMockData = async () => {
+    console.log(questions)
+    questions.push(this.state.ruleInput)
+    await this.setState({addRuleCount: (this.state.addRuleCount +1)})
+    this.setState({ruleInput:''})
+  }
+
   render() {
+    let displayRule;
+    if(this.state.addRuleCount === 0) {
+      displayRule = 
+        <p>
+          You have not added any rules at this time
+        </p>
+    } else {
+      displayRule = 
+        <p>
+          You succefuly entered {this.state.addRuleCount} new rules
+        </p>
+    }
     return (
       <section>
         <h3>Enter in the rule you would like to see added to the game</h3> 
@@ -24,10 +46,12 @@ class Rules extends Component {
           value={this.state.ruleInput}
           onChange={this.updateForm}
         />
+        {displayRule}
         <button
           type="button"
           name="Submit"
           disabled={this.state.ruleInput === ''}
+          onClick={this.updateMockData}
         >
           Submit Rule
         </button> 
