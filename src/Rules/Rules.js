@@ -18,7 +18,6 @@ class Rules extends Component {
   }
 
   updateMockData = async () => {
-    console.log(questions)
     questions.push(this.state.ruleInput)
     await this.setState({addRuleCount: (this.state.addRuleCount +1)})
     this.setState({ruleInput:''})
@@ -45,6 +44,7 @@ class Rules extends Component {
           name='ruleInput'
           value={this.state.ruleInput}
           onChange={this.updateForm}
+          placeholder="Enter New Rule Here"
         />
         {displayRule}
         <button

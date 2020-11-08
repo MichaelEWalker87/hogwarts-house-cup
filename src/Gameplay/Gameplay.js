@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { questions } from '../Mock_Data/Mock_Data.js'
+import PlayCards from '../Play_Cards/PlayCards.js'
 
 export class Gameplay extends Component {
   constructor(props) {
@@ -17,27 +18,16 @@ export class Gameplay extends Component {
     this.setState({question: questions[num]})
   };
 
-  // makePlayerCards = (props) => {
-  //   this.props.allPlayerStatCards.map((card) => {
-  //    const playerCard = {
-  //      bloodStatus: "unknown",
-  //      boggart: "Lord Voldemort",
-  //      deathEater: false,
-  //      dumbledoresArmy: false,
-  //      house: "Gryffindor",
-  //      ministryOfMagic: false,
-  //      name: "Katie Bell",
-  //      orderOfThePhoenix: false,
-  //      role: card.role || "unknown",
-  //      school: "Hogwarts School of Witchcraft and Wizardry",
-  //      species: "human",
-  //     }
-  //   })
-  // }
-
   render(){
+    let button;
+    if(this.state.question === '') {
+      button = "Click Here To Start"
+    } else {
+      button = "Next"
+    }
     return (
       <section>
+        <PlayCards allPlayerStatCards={this.props.allPlayerStatCards}/>
         <section>
           <p>
             {this.state.question}
@@ -45,7 +35,7 @@ export class Gameplay extends Component {
           <button
             onClick={this.getRandomIndex}
           >
-            Next 
+            {button} 
           </button>
         </section>
         <Link 
@@ -53,7 +43,7 @@ export class Gameplay extends Component {
           label="Home"
         >
           <button>
-            Go To Start
+            Restart Game
           </button>
         </Link>
       </section>
