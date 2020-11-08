@@ -69,7 +69,9 @@ class App extends Component {
         />
         <Route exact path='/quickstart' render={ () => <QuickStart /> } />
         <Route exact path='/rules' render={ () => <Rules />} />
-        <Route exact path='/gameplay' render={ () => <Gameplay /> } />
+        <Route exact path='/gameplay' render={ () => 
+          <Gameplay allPlayerStatCards={this.state.allPlayerStatCards}/> } 
+        />
       </section>
     )
   }
