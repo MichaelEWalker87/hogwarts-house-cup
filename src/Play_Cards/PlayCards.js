@@ -1,4 +1,6 @@
+import { render } from '@testing-library/react'
 import React, { Component } from 'react'
+import { SingleCard } from "../SingleCard/SingleCard.js"
 
 export class PlayCards extends Component {
   constructor(props) {
@@ -34,11 +36,16 @@ export class PlayCards extends Component {
     this.setState({cleanPlayerCards: cleanCards})
   }
 
+  renderCards = () => {
+    this.state.cleanPlayerCards.map((card) => {
+      render(<SingleCard card={card}/>)
+    })
+  }
+
   render() {
     if(this.state.cleanPlayerCards.length === 0){
       return <h3>An Error has occurred please restart the game and try again</h3>
     } 
-    console.log(this.state.cleanPlayerCards)
     return (
       <textarea
         name="playerCard"
