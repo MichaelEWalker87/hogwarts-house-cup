@@ -37,9 +37,10 @@ export class PlayCards extends Component {
   }
 
   renderCards = () => {
-    this.state.cleanPlayerCards.map((card) => {
-      render(<SingleCard card={card}/>)
+    let fuck= this.state.cleanPlayerCards.map((card) => {
+      return(<SingleCard card={card}/>)
     })
+    return fuck
   }
 
   render() {
@@ -47,14 +48,9 @@ export class PlayCards extends Component {
       return <h3>An Error has occurred please restart the game and try again</h3>
     } 
     return (
-      <textarea
-        name="playerCard"
-        rows="5" 
-        cols="25"
-        >
-        {/* <h4>{props.name}</h4>
-        <p>{props.school}</p> */}
-      </textarea> 
+      <section>
+        {this.renderCards()}
+      </section>
     )
   }
 }

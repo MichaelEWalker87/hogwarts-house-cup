@@ -1,24 +1,25 @@
 import React from 'react'
 
 export const SingleCard = (props) => {
+  console.log(props.card)
   return (
-    <section className={props.player}>
-      <h5>Player {props.player}</h5>
-      <h6>name: {props.name}</h6>
-      <p>alias: {props.alias}</p>
-      <p>school: {props.school}</p>
-      <p>role: {props.role}</p>
-      <p>house: {props.house}</p>
-      <p>Dumbledores Army: {props.dumbledoresArmy}</p>
-      <p>Order Of The Phoenix: {props.orderOfThePhoenix}</p>
-      <p>Ministry Of Magic: {props.ministryOfMagic}</p>
-      <p>Death Eater: {props.deathEater}</p>
-      <p>Animagus: {props.animagus}</p>
-      <p>Boggart: {props.boggart}</p>
-      <p>Patronus: {props.Patronus}</p>
-      <p>Species: {props.species}</p>
-      <p>Wand: {props.wand}</p>
-      <p>Blood Status: {props.bloodStatus}</p>
+    <section className={props.card.player}>
+      <h4>Player {props.card.player}</h4>
+      <p>Name: {props.card.name}</p>
+      <p>Alias: {props.card.alias}</p>
+      <p>School: {props.card.school}</p>
+      <p>Role: {props.card.role}</p>
+      <p>House: {props.card.house}</p>
+      <p>Dumbledores Army: {props.card.dumbledoresArmy}</p>
+      <p>Order Of The Phoenix: {props.card.orderOfThePhoenix}</p>
+      <p>Ministry Of Magic: {props.card.ministryOfMagic}</p>
+      <p>Death Eater: {props.card.deathEater}</p>
+      <p>Animagus: {props.card.animagus}</p>
+      <p>Boggart: {props.card.boggart}</p>
+      <p>Patronus: {props.card.Patronus}</p>
+      <p>Species: {props.card.species}</p>
+      <p>Wand: {props.card.wand}</p>
+      <p>Blood Status: {props.card.bloodStatus}</p>
     </section>
   )
 }
