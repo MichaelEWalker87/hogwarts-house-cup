@@ -16,7 +16,7 @@ export const SingleCard = (props) => {
       <p>Death Eater: {props.card.deathEater}</p>
       <p>Animagus: {props.card.animagus}</p>
       <p>Boggart: {props.card.boggart}</p>
-      <p>Patronus: {props.card.Patronus}</p>
+      <p>Patronus: {props.card.patronus}</p>
       <p>Species: {props.card.species}</p>
       <p>Wand: {props.card.wand}</p>
       <p>Blood Status: {props.card.bloodStatus}</p>
