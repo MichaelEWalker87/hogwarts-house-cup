@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom';
 
-export class PickPlayer extends Component {
+class PickPlayer extends Component {
     constructor(props) {
         super(props)
     

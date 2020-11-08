@@ -24,6 +24,7 @@ export class PlayerAmount extends Component {
           name='players'
           min={2}
           max={8}
+          role="spinbutton"
           value={this.state.players}
           onChange={this.handleChange}
         />

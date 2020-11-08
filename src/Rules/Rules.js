@@ -33,7 +33,7 @@ class Rules extends Component {
     } else {
       displayRule = 
         <p>
-          You succefuly entered {this.state.addRuleCount} new rules
+          You successfully entered {this.state.addRuleCount} new rules
         </p>
     }
     return (
