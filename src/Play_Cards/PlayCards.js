@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 import React, { Component } from 'react'
 import { SingleCard } from "../SingleCard/SingleCard.js"
+import PropTypes from 'prop-types'
 
 export class PlayCards extends Component {
   constructor(props) {
@@ -57,4 +58,6 @@ export class PlayCards extends Component {
 
 export default PlayCards
 
-
+PlayCards.propTypes = {
+  allPlayerStatCards:PropTypes.array
+}
