@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { questions } from '../Mock_Data/Mock_Data.js'
 import PlayCards from '../Play_Cards/PlayCards.js'
+import PropTypes from 'prop-types'
 
 export class Gameplay extends Component {
   constructor(props) {
@@ -54,3 +55,7 @@ export class Gameplay extends Component {
 }
 
 export default Gameplay
+
+Gameplay.propTypes = {
+  allPlayerStatCards:PropTypes.array
+}

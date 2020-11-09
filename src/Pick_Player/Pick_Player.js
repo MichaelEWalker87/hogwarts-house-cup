@@ -81,4 +81,4 @@ PickPlayer.propTypes = {
     playerCount:PropTypes.number,
     updateselectedPlayers:PropTypes.func,
     characterNames: PropTypes.array
-  }
+}
