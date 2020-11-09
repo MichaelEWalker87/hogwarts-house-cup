@@ -6,6 +6,7 @@ import userEvent from '@testing-library/user-event'
 import App from './App';
 import { act } from "react-dom/test-utils";
 import { getCharacter } from './Api_calls/API.js'
+import PlayCards from "./Play_Cards/PlayCards.js"
 jest.mock('./Api_calls/API.js')
 
 
@@ -163,6 +164,116 @@ describe('App', () => {
   })  
 
   it('should Allow up to 8 player to ', async () => {
+   render(
+   <MemoryRouter>
+    <PlayCards allPlayerStatCards={[
+      {
+        _id: "5a1230070f5ae10021650d90",
+        name: "Stanley Shunpike",
+        role: "Conductor of the Knight Bus",
+        alias: "Stan ",
+        __v: 0,
+        ministryOfMagic: false,
+        orderOfThePhoenix: false,
+        dumbledoresArmy: false,
+        deathEater: false,
+        bloodStatus: "unknown",
+        species: "human"
+      },
+      {
+        _id: "5a1230070f5ae10021650d90",
+        name: "Stanley Shunpike",
+        role: "Conductor of the Knight Bus",
+        alias: "Stan ",
+        __v: 0,
+        ministryOfMagic: false,
+        orderOfThePhoenix: false,
+        dumbledoresArmy: false,
+        deathEater: false,
+        bloodStatus: "unknown",
+        species: "human"
+      },
+      {
+        _id: "5a1230070f5ae10021650d90",
+        name: "Stanley Shunpike",
+        role: "Conductor of the Knight Bus",
+        alias: "Stan ",
+        __v: 0,
+        ministryOfMagic: false,
+        orderOfThePhoenix: false,
+        dumbledoresArmy: false,
+        deathEater: false,
+        bloodStatus: "unknown",
+        species: "human"
+      },
+      {
+        _id: "5a1230070f5ae10021650d90",
+        name: "Stanley Shunpike",
+        role: "Conductor of the Knight Bus",
+        alias: "Stan ",
+        __v: 0,
+        ministryOfMagic: false,
+        orderOfThePhoenix: false,
+        dumbledoresArmy: false,
+        deathEater: false,
+        bloodStatus: "unknown",
+        species: "human"
+      },
+      {
+        _id: "5a1230070f5ae10021650d90",
+        name: "Stanley Shunpike",
+        role: "Conductor of the Knight Bus",
+        alias: "Stan ",
+        __v: 0,
+        ministryOfMagic: false,
+        orderOfThePhoenix: false,
+        dumbledoresArmy: false,
+        deathEater: false,
+        bloodStatus: "unknown",
+        species: "human"
+      },
+      {
+        _id: "5a1230070f5ae10021650d90",
+        name: "Stanley Shunpike",
+        role: "Conductor of the Knight Bus",
+        alias: "Stan ",
+        __v: 0,
+        ministryOfMagic: false,
+        orderOfThePhoenix: false,
+        dumbledoresArmy: false,
+        deathEater: false,
+        bloodStatus: "unknown",
+        species: "human"
+      },
+      {
+        _id: "5a1230070f5ae10021650d90",
+        name: "Stanley Shunpike",
+        role: "Conductor of the Knight Bus",
+        alias: "Stan ",
+        __v: 0,
+        ministryOfMagic: false,
+        orderOfThePhoenix: false,
+        dumbledoresArmy: false,
+        deathEater: false,
+        bloodStatus: "unknown",
+        species: "human"
+      },
+            {
+        _id: "5a1230070f5ae10021650d90",
+        name: "Stanley Shunpike",
+        role: "Conductor of the Knight Bus",
+        alias: "Stan ",
+        __v: 0,
+        ministryOfMagic: false,
+        orderOfThePhoenix: false,
+        dumbledoresArmy: false,
+        deathEater: false,
+        bloodStatus: "unknown",
+        species: "human"
+      },
+    ]}/>
+  </MemoryRouter>
+   ) 
     let countInput = screen.getByRole('spinbutton')
     userEvent.clear(countInput)
     userEvent.type(countInput, "8") 
@@ -194,27 +305,26 @@ describe('App', () => {
     
     let quickstartButton = screen.getByRole('button', { name: /Start/i })
     expect(quickstartButton).toBeInTheDocument()
-    screen.debug()  
     userEvent.click(quickstartButton) 
     expect(testLocation.pathname).toBe("/gameplay")
     
     let playerOneName = await waitFor (() => screen.getByText(/player 1/i)) 
-    // let playerTwoName = screen.getByRole('heading', { name: /player 2/i })
-    // let playerThreeName = screen.getByRole('heading', { name: /player 3/i })
-    // let playerFourName = screen.getByRole('heading', { name: /player 4/i })
-    // let playerFiveName = screen.getByRole('heading', { name: /player 5/i })
-    // let playerSixName = screen.getByRole('heading', { name: /player 6/i })
-    // let playerSevenName = screen.getByRole('heading', { name: /player 7/i })
-    // let playerEightName = screen.getByRole('heading', { name: /player 8/i })
+    let playerTwoName = screen.getByRole('heading', { name: /player 2/i })
+    let playerThreeName = screen.getByRole('heading', { name: /player 3/i })
+    let playerFourName = screen.getByRole('heading', { name: /player 4/i })
+    let playerFiveName = screen.getByRole('heading', { name: /player 5/i })
+    let playerSixName = screen.getByRole('heading', { name: /player 6/i })
+    let playerSevenName = screen.getByRole('heading', { name: /player 7/i })
+    let playerEightName = screen.getByRole('heading', { name: /player 8/i })
     
     expect(playerOneName).toBeInTheDocument()
-    // expect(playerTwoName).toBeInTheDocument()
-    // expect(playerThreeName).toBeInTheDocument()
-    // expect(playerFourName).toBeInTheDocument()
-    // expect(playerFiveName).toBeInTheDocument()
-    // expect(playerSixName).toBeInTheDocument()
-    // expect(playerSevenName).toBeInTheDocument()
-    // expect(playerEightName).toBeInTheDocument()
+    expect(playerTwoName).toBeInTheDocument()
+    expect(playerThreeName).toBeInTheDocument()
+    expect(playerFourName).toBeInTheDocument()
+    expect(playerFiveName).toBeInTheDocument()
+    expect(playerSixName).toBeInTheDocument()
+    expect(playerSevenName).toBeInTheDocument()
+    expect(playerEightName).toBeInTheDocument()
   }) 
 })
 
