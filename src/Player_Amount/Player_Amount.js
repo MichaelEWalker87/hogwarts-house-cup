@@ -7,7 +7,7 @@ export class PlayerAmount extends Component {
     super(props)
   
     this.state = {
-       players:2,
+       players: 2,
     }
   }
 
