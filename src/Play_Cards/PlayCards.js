@@ -37,8 +37,8 @@ export class PlayCards extends Component {
   }
 
   renderCards = () => {
-    let renderCard = this.state.cleanPlayerCards.map((card) => {
-      return(<SingleCard card={card}/>)
+    let renderCard = this.state.cleanPlayerCards.map((card, index) => {
+      return(<SingleCard key={index} card={card}/>)
     })
     return renderCard
   }
