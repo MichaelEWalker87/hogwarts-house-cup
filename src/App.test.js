@@ -84,5 +84,35 @@ describe('App', () => {
     expect(testLocation.pathname).toBe("/quickstart")
   }) 
   
+  it('should route the submit button from quickstart to rules', () => {
+    userEvent.click(screen.getByText('Submit'))
+    expect(testLocation.pathname).toBe("/select-character")
+    playerOneDropDown = screen.getByRole('combobox', { name: /player 1 select your character/i })
+    playerTwoDropDown = screen.getByRole('combobox', { name: /player 2 select your character/i })
+    let button = screen.getByRole('button', { name: /submit/i })
+    userEvent.selectOptions(playerOneDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerTwoDropDown, "Stanley Shunpike")
+    userEvent.click(button)
+    expect(testLocation.pathname).toBe("/quickstart")
+    let rulebutton = screen.getByRole('button', { name: /rules/i })
+    userEvent.click(rulebutton)
+    expect(testLocation.pathname).toBe("/rules")
+  }) 
+
+  it('should route the submit button from quickstart to rules', () => {
+    userEvent.click(screen.getByText('Submit'))
+    expect(testLocation.pathname).toBe("/select-character")
+    playerOneDropDown = screen.getByRole('combobox', { name: /player 1 select your character/i })
+    playerTwoDropDown = screen.getByRole('combobox', { name: /player 2 select your character/i })
+    let button = screen.getByRole('button', { name: /submit/i })
+    userEvent.selectOptions(playerOneDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerTwoDropDown, "Stanley Shunpike")
+    userEvent.click(button)
+    expect(testLocation.pathname).toBe("/quickstart")
+    let quickstartButton = screen.getByRole('button', { name: /start/i })
+    userEvent.click(quickstartButton)
+    expect(testLocation.pathname).toBe("/gameplay")
+  }) 
+  
 })
 
