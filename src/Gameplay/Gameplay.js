@@ -29,7 +29,9 @@ export class Gameplay extends Component {
       <section>
         <PlayCards allPlayerStatCards={this.props.allPlayerStatCards}/>
         <section>
-          <p>
+          <p
+            data-testid="questions"
+          >
             {this.state.question}
           </p>
           <button

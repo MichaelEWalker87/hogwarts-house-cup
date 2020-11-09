@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom';
 
-export class PickPlayer extends Component {
+class PickPlayer extends Component {
     constructor(props) {
         super(props)
     
@@ -17,7 +17,11 @@ export class PickPlayer extends Component {
          for (let i = 0; i < this.props.playerCount; i++) {
             let playerNumber = (i)
             allPlayers.push(
-                <section key={(playerNumber + 1)}>
+                <section 
+                    key={(playerNumber + 1) } 
+                    title="character-dropdown" 
+                    className="character-dropdown"
+                >
                     <label>
                         Player {(playerNumber + 1)} select your character
                         <select 
@@ -58,9 +62,9 @@ export class PickPlayer extends Component {
                 </h2>
                 {this.populatePlayers()}
                     <button
-                    type='button'
-                    disabled={this.state.currentPlayers.length != this.props.playerCount}
-                    onClick={this.handleSubmit}
+                        type='button'
+                        disabled={this.state.currentPlayers.length != this.props.playerCount}
+                        onClick={this.handleSubmit}
                     >
                         Submit
                     </button>

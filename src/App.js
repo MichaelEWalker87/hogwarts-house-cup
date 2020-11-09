@@ -64,7 +64,6 @@ class App extends Component {
             playerCount={this.state.playerCount} 
             updateselectedPlayers={this.updateselectedPlayers}
             characterNames={this.state.characterNames}
-            getAllPlayerStatCards={this.getAllPlayerStatCards}
           />} 
         />
         <Route exact path='/quickstart' render={ () => <QuickStart /> } />
