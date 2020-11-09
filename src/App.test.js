@@ -10,7 +10,8 @@ jest.mock('./Api_calls/API.js')
 
 
 describe('App', () => {
-  let testHistory, testLocation;
+  let testHistory, testLocation, playerOneDropDown; 
+  let playerTwoDropDown;
   beforeEach(() => {
     getCharacter.mockResolvedValue([
       {
@@ -53,8 +54,9 @@ describe('App', () => {
         />
       </MemoryRouter>
     );
+    
   })
-  it('should route the sumit button from player amount to select-character', () => {
+  it('should route the submit button from player amount to select-character', () => {
     userEvent.click(screen.getByText('Submit'))
     expect(testLocation.pathname).toBe("/select-character")
   })  
@@ -68,6 +70,18 @@ describe('App', () => {
     let inputOne = screen.getByRole('combobox', { name: /player 1 select your character/i })
     let stan = screen.getAllByText("Stanley Shunpike") 
     expect(stan.length).toBe(2)
+  }) 
+  
+  it('should route the submit button from select-character to quickstart', () => {
+    userEvent.click(screen.getByText('Submit'))
+    expect(testLocation.pathname).toBe("/select-character")
+    playerOneDropDown = screen.getByRole('combobox', { name: /player 1 select your character/i })
+    playerTwoDropDown = screen.getByRole('combobox', { name: /player 2 select your character/i })
+    let button = screen.getByRole('button', { name: /submit/i })
+    userEvent.selectOptions(playerOneDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerTwoDropDown, "Stanley Shunpike")
+    userEvent.click(button)
+    expect(testLocation.pathname).toBe("/quickstart")
   }) 
   
 })

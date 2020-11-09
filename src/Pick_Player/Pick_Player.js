@@ -62,9 +62,9 @@ class PickPlayer extends Component {
                 </h2>
                 {this.populatePlayers()}
                     <button
-                    type='button'
-                    disabled={this.state.currentPlayers.length != this.props.playerCount}
-                    onClick={this.handleSubmit}
+                        type='button'
+                        disabled={this.state.currentPlayers.length != this.props.playerCount}
+                        onClick={this.handleSubmit}
                     >
                         Submit
                     </button>
