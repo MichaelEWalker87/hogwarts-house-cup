@@ -25,12 +25,13 @@ export class Gameplay extends Component {
     } else {
       button = "Next"
     }
-    console.log(this.props.allPlayerStatCards)
     return (
       <section>
         <PlayCards allPlayerStatCards={this.props.allPlayerStatCards}/>
         <section>
-          <p>
+          <p
+            data-testid="questions"
+          >
             {this.state.question}
           </p>
           <button
