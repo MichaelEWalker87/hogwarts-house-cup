@@ -56,6 +56,7 @@ describe('App', () => {
     );
     
   })
+  
   it('should route the submit button from player amount to select-character', () => {
     userEvent.click(screen.getByText('Submit'))
     expect(testLocation.pathname).toBe("/select-character")

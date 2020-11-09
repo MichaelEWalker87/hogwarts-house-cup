@@ -18,6 +18,7 @@ describe('Amount', () => {
     countInput = screen.getByRole('spinbutton')
     submit = screen.getByText('Submit')
   })
+
   it('should render the player amount page', () => {
     expect(playerTile).toBeInTheDocument();
     expect(countInput).toBeInTheDocument();
