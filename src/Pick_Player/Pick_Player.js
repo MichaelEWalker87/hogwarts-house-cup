@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 class PickPlayer extends Component {
     constructor(props) {
@@ -75,3 +76,9 @@ class PickPlayer extends Component {
 }
 
 export default PickPlayer
+
+PickPlayer.propTypes = {
+    playerCount:PropTypes.number,
+    updateselectedPlayers:PropTypes.func,
+    characterNames: PropTypes.array
+}

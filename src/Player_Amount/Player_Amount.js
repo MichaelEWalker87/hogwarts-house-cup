@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 export class PlayerAmount extends Component {
   constructor(props) {
@@ -49,3 +50,6 @@ export class PlayerAmount extends Component {
 
 export default PlayerAmount
 
+PlayerAmount.propTypes = {
+  updatePlayercount: PropTypes.func
+}
