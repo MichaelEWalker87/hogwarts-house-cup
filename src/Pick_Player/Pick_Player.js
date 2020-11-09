@@ -17,7 +17,11 @@ class PickPlayer extends Component {
          for (let i = 0; i < this.props.playerCount; i++) {
             let playerNumber = (i)
             allPlayers.push(
-                <section key={(playerNumber + 1)}>
+                <section 
+                    key={(playerNumber + 1) } 
+                    title="character-dropdown" 
+                    className="character-dropdown"
+                >
                     <label>
                         Player {(playerNumber + 1)} select your character
                         <select 

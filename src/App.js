@@ -49,7 +49,7 @@ class App extends Component {
 
   populateDropDownCharacters = (characterData) => {
    return characterData.map((character, index) => {
-       return(<option key={index} value={character.name}>{character.name}</option>)
+       return(<option key={index} onClick={() => console.log("I am harry")} value={character.name}>{character.name}</option>)
     })
   } 
 
@@ -64,7 +64,6 @@ class App extends Component {
             playerCount={this.state.playerCount} 
             updateselectedPlayers={this.updateselectedPlayers}
             characterNames={this.state.characterNames}
-            getAllPlayerStatCards={this.getAllPlayerStatCards}
           />} 
         />
         <Route exact path='/quickstart' render={ () => <QuickStart /> } />
