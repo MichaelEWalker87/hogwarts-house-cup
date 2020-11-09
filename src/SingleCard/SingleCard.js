@@ -1,9 +1,8 @@
 import React from 'react'
 
 export const SingleCard = (props) => {
-  console.log(props.card)
   return (
-    <section className={props.card.player}>
+    <section key={props.card.player} className={props.card.player}>
       <h4>Player {props.card.player}</h4>
       <p>Name: {props.card.name}</p>
       <p>Alias: {props.card.alias}</p>

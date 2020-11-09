@@ -37,10 +37,10 @@ export class PlayCards extends Component {
   }
 
   renderCards = () => {
-    let fuck= this.state.cleanPlayerCards.map((card) => {
+    let renderCard = this.state.cleanPlayerCards.map((card) => {
       return(<SingleCard card={card}/>)
     })
-    return fuck
+    return renderCard
   }
 
   render() {

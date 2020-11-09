@@ -49,7 +49,7 @@ class App extends Component {
 
   populateDropDownCharacters = (characterData) => {
    return characterData.map((character, index) => {
-       return(<option key={index} onClick={() => console.log("I am harry")} value={character.name}>{character.name}</option>)
+       return(<option key={index} value={character.name}>{character.name}</option>)
     })
   } 
 
