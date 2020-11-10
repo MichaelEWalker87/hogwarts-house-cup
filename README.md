@@ -8,7 +8,7 @@
 
 * A site for Harry Potter-loving fans that want to play wacky light-hearted drinking games styled after the game “Piccolo” and “Curses”. The game allows for 2-8 players and lets the players pick a large array of characters from the Harry Potter universe. Players can add rules if desired or hit quick start to hop right into the game. If the players choose to add rules they can do so, but the data does not persist past refresh at this time.   
 
-![Working project](https://i.imgur.com/88KQVLT.gif)
+![Working project](https://i.imgur.com/xPAvXLU.gif)
 
 **Installation**
 
