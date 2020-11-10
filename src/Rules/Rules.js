@@ -37,7 +37,7 @@ class Rules extends Component {
         </p>
     }
     return (
-      <section>
+      <section className="rule">
         <h3>Enter in the rule you would like to see added to the game</h3> 
         <input
           type='text'
@@ -52,6 +52,7 @@ class Rules extends Component {
           name="Submit"
           disabled={this.state.ruleInput === ''}
           onClick={this.updateMockData}
+          className="submit-rule"
         >
           Submit Rule
         </button> 
