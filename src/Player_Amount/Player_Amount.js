@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
+import './Player_Amount.css'
 
 export class PlayerAmount extends Component {
   constructor(props) {
@@ -18,16 +19,16 @@ export class PlayerAmount extends Component {
 
   render() {
     return (
-        <section>
-        <label>Pick The Amount Of Players</label>
+        <section className="amount-section">
+        <label className="pick-amount-lable">Pick The Amount Of Players</label>
         <input
           type='number'
           name='players'
           min={2}
           max={8}
-          role="spinbutton"
           value={this.state.players}
           onChange={this.handleChange}
+          className="amount-picker"
         />
         <Link 
           to="/select-character"
@@ -35,7 +36,6 @@ export class PlayerAmount extends Component {
         >
           <button
             role="button"
-            type="button"
             disabled={this.state.players > 8 || this.state.players < 2}
             className="login-submit"
             onClick={() => this.props.updatePlayercount(this.state.players)}

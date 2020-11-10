@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { questions } from '../Mock_Data/Mock_Data.js'
-
+import './Rules.css'
 
 class Rules extends Component {
   constructor(props) {

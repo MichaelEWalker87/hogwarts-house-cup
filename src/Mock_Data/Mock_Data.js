@@ -45,7 +45,7 @@ export const questions = [
   "If your blood status is unknown drink once",
   "If you are a pure-blood drink once for each non-pure blood",
   "If you are not a human lets party like an animal you must embody the traits of the species (one drink penalty each time not observed)",
-  "Grab a timer for Dobby find a pair of socks and present them to the person across from you and say 'your a free elf' you have 13 seconds each second over is an additional drink maxed out at 7",
+  "Grab a timer for Dobby find a pair of socks and present them to the person across from you and say 'you're a free elf' you have 13 seconds each second over is an additional drink maxed out at 7",
   "Name all the Horcruxes, drink for each you can not name ",
   "The beater, any time people address you you have to pretend to beat the comment away from you to the person to the left or right of you that person then has to duck (if you fail to beat the addressed statement away you drink twice if the person to the left or right pending on the beating motion didn’t duck they drink once) ",
   "The seeker, you must pass something to another player each time you are addressed (if you fail to pass something drink 5 times if they drop the item both of you drink once) ",

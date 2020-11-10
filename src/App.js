@@ -6,6 +6,7 @@ import PickPlayer from './Pick_Player/Pick_Player.js'
 import Gameplay from './Gameplay/Gameplay.js'
 import { getCharacter } from './Api_calls/API.js'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import './App.css'
 
 class App extends Component {
   constructor() {
@@ -55,7 +56,7 @@ class App extends Component {
 
   render() {
     return (
-      <section>
+      <section className="all-files">
         <Route exact path='/' render={ () => 
           <PlayerAmount updatePlayercount={this.updatePlayercount}/>} 
         />
