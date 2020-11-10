@@ -28,16 +28,18 @@ export class Gameplay extends Component {
       button = "Next"
     }
     return (
-      <section>
+      <section className='all-game-play'>
         <PlayCards allPlayerStatCards={this.props.allPlayerStatCards}/>
         <section >
           <p
             data-testid="questions"
+            className='questions'
           >
             {this.state.question}
           </p>
           <button
             onClick={this.getRandomIndex}
+            className='game-next-button'
           >
             {button} 
           </button>

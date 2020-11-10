@@ -58,7 +58,7 @@ class PickPlayer extends Component {
 
     render() {
         return (
-            <section>
+            <section className="pick-player">
                 <h2>
                     {this.state.error}
                 </h2>

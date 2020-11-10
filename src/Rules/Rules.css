@@ -1,3 +1,10 @@
 .submit-rule {
   margin: 1rem;
 }
+.rule {
+  background-color: rgb(255, 228, 196, 0.792);;
+}
+/* body {
+  background-image: url("../images/Decree.png");
+  background-color: #cccccc;
+ } */

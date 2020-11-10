@@ -1,3 +1,12 @@
 .amount-section{
   margin: 10rem;
+  background-color: rgb(255, 228, 196, 0.792);
+}
+
+.login-submit{
+  margin: 1rem;
+}
+
+.pick-amount-lable {
+  margin: 1rem;
 }

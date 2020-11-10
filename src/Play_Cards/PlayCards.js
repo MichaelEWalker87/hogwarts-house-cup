@@ -47,7 +47,7 @@ export class PlayCards extends Component {
 
   render() {
     if(this.state.cleanPlayerCards.length === 0){
-      return <h3>An Error has occurred please restart the game and try again</h3>
+      return <h3 className='gameplay-error'>An Error has occurred please restart the game and try again</h3>
     } 
     return (
       <section className="card-container">
