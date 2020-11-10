@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+## Hogwarts House Cup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Author**
 
-## Available Scripts
+[Michael Walker](https://github.com/MichaelEWalker87)
 
-In the project directory, you can run:
+**Project Description**
 
-### `npm start`
+* A site for Harry Potter-loving fans that want to play wacky light-hearted drinking games styled after the game “Piccolo” and “Curses”. The game allows for 2-8 players and lets the players pick a large array of characters from the Harry Potter universe. Players can add rules if desired or hit quick start to hop right into the game. If the players choose to add rules they can do so, however, the data does not persist past refresh at this time.   
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Installation**
 
-### `npm test`
+**Fork this repository:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* https://github.com/MichaelEWalker87/hogwarts-house-cup.git
 
-### `npm run build`
+**Clone your forked repository**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* `git clone` and the copied URL
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Change into the directory and install the project dependencies**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* `cd` into the directory and run `npm install` for dependencies
 
-### `npm run eject`
+* In the terminal project root directory run `npm start`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Project Goals**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Create a functioning app using React, Router, and Asynchronous JavaScript
+* Decide what the most viable product for the app will be
+* Use an external API 
+* To build a robust testing package 
+* To have a multipage app using routing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Wins**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Learning  more about React testing and overcoming the issue with testing elements like spin button
+* Incorporating smooth user experience using the route 
+* Building an application solo 
+* Utilizing the data from the API to make a functioning game
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Challenges**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Testing certain interactions of the app such as the spin button 
+* Overcoming unexpected behavior with user interaction such as allowing the user to select up to 8 people  
+* Accessing the API data properly from the API Key, originally the key was not allowed 
 
-### Code Splitting
+**Technologies Used**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* React
+* Jest and React testing libraries
+* Webpack and Babel
+* Fetch API
 
-### Analyzing the Bundle Size
+**Spec Given**
+* https://frontend.turing.io/projects/module-3/binary-challenge.html
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Issues to be Resolved**
 
-### Making a Progressive Web App
+* You can check out any issues available on my project board:
+  * https://github.com/MichaelEWalker87/hogwarts-house-cup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Special Thanks**
+* Mentor Nathaniel D Foster, Instructor Leta Keane, Instructor Khalid Williams, Greyson Elkins and Ben McClung from the 2005 Frontend class,  and 2006 Turing School of Software & Design Cohort Members.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
