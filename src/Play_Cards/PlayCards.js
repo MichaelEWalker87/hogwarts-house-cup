@@ -2,6 +2,7 @@ import { render } from '@testing-library/react'
 import React, { Component } from 'react'
 import { SingleCard } from "../SingleCard/SingleCard.js"
 import PropTypes from 'prop-types'
+import './PlayCard.css'
 
 export class PlayCards extends Component {
   constructor(props) {
@@ -46,10 +47,10 @@ export class PlayCards extends Component {
 
   render() {
     if(this.state.cleanPlayerCards.length === 0){
-      return <h3>An Error has occurred please restart the game and try again</h3>
+      return <h3 className='gameplay-error'>An Error has occurred please restart the game and try again</h3>
     } 
     return (
-      <section>
+      <section className="card-container">
         {this.renderCards()}
       </section>
     )

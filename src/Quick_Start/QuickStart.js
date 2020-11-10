@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import './QuickStart.css'
 
 const QuickStart = () => {
   return(
-    <section>
+    <section className="quick-start">
       <h3>
       Choose 'Start' and be taken directly to gameplay, 
       or select 'Rule' to customize the gameplay experience.
       </h3>
-      <section>
+      <section className="quick-start-menu">
         <label>
           Quickstart 
         </label>
@@ -17,7 +17,7 @@ const QuickStart = () => {
           to="/gameplay"
           label="gameplay"
         >
-          <button>
+          <button className="quick-start-buttons">
             Start
           </button>
         </Link>
@@ -30,7 +30,7 @@ const QuickStart = () => {
           to="/rules"
           label="rules"
         >
-          <button>
+          <button className="quick-start-buttons">
             Rules
           </button>
         </Link>

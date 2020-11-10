@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types'
+import './Pick_Player.css'
 
 class PickPlayer extends Component {
     constructor(props) {
@@ -57,7 +58,7 @@ class PickPlayer extends Component {
 
     render() {
         return (
-            <section>
+            <section className="pick-player">
                 <h2>
                     {this.state.error}
                 </h2>

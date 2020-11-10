@@ -1,0 +1,8 @@
+.single-card {
+  height: 10rem;
+  width: 20rem;
+  overflow: auto;
+  margin: 1rem;
+  text-align: center;
+  background-color: rgb(255, 228, 196, 0.792);;
+}

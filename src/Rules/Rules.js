@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { questions } from '../Mock_Data/Mock_Data.js'
-
+import './Rules.css'
 
 class Rules extends Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class Rules extends Component {
         </p>
     }
     return (
-      <section>
+      <section className="rule">
         <h3>Enter in the rule you would like to see added to the game</h3> 
         <input
           type='text'
@@ -52,6 +52,7 @@ class Rules extends Component {
           name="Submit"
           disabled={this.state.ruleInput === ''}
           onClick={this.updateMockData}
+          className="submit-rule"
         >
           Submit Rule
         </button> 

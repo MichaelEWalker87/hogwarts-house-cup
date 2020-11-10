@@ -1,8 +1,9 @@
 import React from 'react'
+import "./SingleCard.css"
 
 export const SingleCard = (props) => {
   return (
-    <section key={props.card.player} className={props.card.player}>
+    <section key={props.card.player} className={props.card.player} className="single-card">
       <h4>Player {props.card.player}</h4>
       <p>Name: {props.card.name}</p>
       <p>Alias: {props.card.alias}</p>

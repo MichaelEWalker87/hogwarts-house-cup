@@ -1,0 +1,8 @@
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+.gameplay-error {
+  background-color: rgb(255, 228, 196, 0.792);
+}

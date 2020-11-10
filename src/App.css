@@ -1,6 +1,6 @@
-
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-   -webkit-appearance: none;
-   margin: 0;
-  }
+.all-files{
+  text-align: center;
+}
+body{
+  background-image: url("./images/Hogwarts-Express.png");
+}
