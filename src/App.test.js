@@ -163,114 +163,38 @@ describe('App', () => {
     expect(testLocation.pathname).toBe("/")
   })  
 
-  it('should Allow up to 8 player to ', async () => {
+  it('should Allow up to 8 player to play the game', async () => {
+   let players = [
+     {drop: "playerOneDropDown", name: "playerOneName", number: 1 },
+     {drop: "playerTwoDropDown", name: "playerTwoName", number: 2 },
+     {drop: "playerThreeDropDown", name: "playerThreeName", number: 3 },
+     {drop: "playerFourDropDown", name: "playerFourName", number: 4 },
+     {drop: "playerFiveDropDown", name: "playerFiveName", number: 5 },
+     {drop: "playerSixDropDown", name: "playerSixName", number: 6 },
+     {drop: "playerSevenDropDown", name: "playerSevenName", number: 7 },
+     {drop: "playerEightDropDown", name: "playerEightName", number: 8 },
+  ]
+  
+  let playerStatCards = players.map((player) => {
+    return {
+      _id: "5a1230070f5ae10021650d90",
+      name: "Stanley Shunpike",
+      role: "Conductor of the Knight Bus",
+      alias: "Stan ",
+      __v: 0,
+      ministryOfMagic: false,
+      orderOfThePhoenix: false,
+      dumbledoresArmy: false,
+      deathEater: false,
+      bloodStatus: "unknown",
+      species: "human"
+    }
+  })
+
    render(
    <MemoryRouter>
     <PlayCards allPlayerStatCards={[
-      {
-        _id: "5a1230070f5ae10021650d90",
-        name: "Stanley Shunpike",
-        role: "Conductor of the Knight Bus",
-        alias: "Stan ",
-        __v: 0,
-        ministryOfMagic: false,
-        orderOfThePhoenix: false,
-        dumbledoresArmy: false,
-        deathEater: false,
-        bloodStatus: "unknown",
-        species: "human"
-      },
-      {
-        _id: "5a1230070f5ae10021650d90",
-        name: "Stanley Shunpike",
-        role: "Conductor of the Knight Bus",
-        alias: "Stan ",
-        __v: 0,
-        ministryOfMagic: false,
-        orderOfThePhoenix: false,
-        dumbledoresArmy: false,
-        deathEater: false,
-        bloodStatus: "unknown",
-        species: "human"
-      },
-      {
-        _id: "5a1230070f5ae10021650d90",
-        name: "Stanley Shunpike",
-        role: "Conductor of the Knight Bus",
-        alias: "Stan ",
-        __v: 0,
-        ministryOfMagic: false,
-        orderOfThePhoenix: false,
-        dumbledoresArmy: false,
-        deathEater: false,
-        bloodStatus: "unknown",
-        species: "human"
-      },
-      {
-        _id: "5a1230070f5ae10021650d90",
-        name: "Stanley Shunpike",
-        role: "Conductor of the Knight Bus",
-        alias: "Stan ",
-        __v: 0,
-        ministryOfMagic: false,
-        orderOfThePhoenix: false,
-        dumbledoresArmy: false,
-        deathEater: false,
-        bloodStatus: "unknown",
-        species: "human"
-      },
-      {
-        _id: "5a1230070f5ae10021650d90",
-        name: "Stanley Shunpike",
-        role: "Conductor of the Knight Bus",
-        alias: "Stan ",
-        __v: 0,
-        ministryOfMagic: false,
-        orderOfThePhoenix: false,
-        dumbledoresArmy: false,
-        deathEater: false,
-        bloodStatus: "unknown",
-        species: "human"
-      },
-      {
-        _id: "5a1230070f5ae10021650d90",
-        name: "Stanley Shunpike",
-        role: "Conductor of the Knight Bus",
-        alias: "Stan ",
-        __v: 0,
-        ministryOfMagic: false,
-        orderOfThePhoenix: false,
-        dumbledoresArmy: false,
-        deathEater: false,
-        bloodStatus: "unknown",
-        species: "human"
-      },
-      {
-        _id: "5a1230070f5ae10021650d90",
-        name: "Stanley Shunpike",
-        role: "Conductor of the Knight Bus",
-        alias: "Stan ",
-        __v: 0,
-        ministryOfMagic: false,
-        orderOfThePhoenix: false,
-        dumbledoresArmy: false,
-        deathEater: false,
-        bloodStatus: "unknown",
-        species: "human"
-      },
-            {
-        _id: "5a1230070f5ae10021650d90",
-        name: "Stanley Shunpike",
-        role: "Conductor of the Knight Bus",
-        alias: "Stan ",
-        __v: 0,
-        ministryOfMagic: false,
-        orderOfThePhoenix: false,
-        dumbledoresArmy: false,
-        deathEater: false,
-        bloodStatus: "unknown",
-        species: "human"
-      },
+      {playerStatCards}
     ]}/>
   </MemoryRouter>
    ) 
@@ -280,8 +204,12 @@ describe('App', () => {
     userEvent.click(screen.getByText('Submit'))
     expect(testLocation.pathname).toBe("/select-character")
     
-    playerOneDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 1 select your character/i }))
-    playerTwoDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 2 select your character/i }))  
+    for (let i = 0; i < players.length; i++) {
+      return 
+    }
+
+    let playerOneDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 1 select your character/i }))
+    let playerTwoDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 2 select your character/i }))  
     let playerThreeDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 3 select your character/i }))
     let playerFourDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 4 select your character/i }))
     let playerFiveDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 5 select your character/i }))
