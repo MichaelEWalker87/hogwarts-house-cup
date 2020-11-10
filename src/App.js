@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   getAllPlayerStatCards = () => {
-    if(this.state.selectedPlayers.length <= 2){
+    if(this.state.selectedPlayers.length <= 8){
       let characterStats = this.state.selectedPlayers.map((selectedPlayer) => {
         return this.state.allCharacters.find((character) => {
           return character.name === selectedPlayer
@@ -61,7 +61,7 @@ class App extends Component {
         />
         <Route exact path='/select-character' render={ () => 
           <PickPlayer 
-            playerCount={this.state.playerCount} 
+            playerCount={+this.state.playerCount} 
             updateselectedPlayers={this.updateselectedPlayers}
             characterNames={this.state.characterNames}
           />} 

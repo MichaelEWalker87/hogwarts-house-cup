@@ -6,6 +6,7 @@ import userEvent from '@testing-library/user-event'
 import App from './App';
 import { act } from "react-dom/test-utils";
 import { getCharacter } from './Api_calls/API.js'
+import PlayCards from "./Play_Cards/PlayCards.js"
 jest.mock('./Api_calls/API.js')
 
 
@@ -161,5 +162,97 @@ describe('App', () => {
     userEvent.click(restartGame)
     expect(testLocation.pathname).toBe("/")
   })  
+
+  it('should Allow up to 8 player to play the game', async () => {
+   let players = [
+     {drop: "playerOneDropDown", name: "playerOneName", number: 1 },
+     {drop: "playerTwoDropDown", name: "playerTwoName", number: 2 },
+     {drop: "playerThreeDropDown", name: "playerThreeName", number: 3 },
+     {drop: "playerFourDropDown", name: "playerFourName", number: 4 },
+     {drop: "playerFiveDropDown", name: "playerFiveName", number: 5 },
+     {drop: "playerSixDropDown", name: "playerSixName", number: 6 },
+     {drop: "playerSevenDropDown", name: "playerSevenName", number: 7 },
+     {drop: "playerEightDropDown", name: "playerEightName", number: 8 },
+  ]
+  
+  let playerStatCards = players.map((player) => {
+    return {
+      _id: "5a1230070f5ae10021650d90",
+      name: "Stanley Shunpike",
+      role: "Conductor of the Knight Bus",
+      alias: "Stan ",
+      __v: 0,
+      ministryOfMagic: false,
+      orderOfThePhoenix: false,
+      dumbledoresArmy: false,
+      deathEater: false,
+      bloodStatus: "unknown",
+      species: "human"
+    }
+  })
+
+   render(
+   <MemoryRouter>
+    <PlayCards allPlayerStatCards={[
+      {playerStatCards}
+    ]}/>
+  </MemoryRouter>
+   ) 
+    let countInput = screen.getByRole('spinbutton')
+    userEvent.clear(countInput)
+    userEvent.type(countInput, "8") 
+    userEvent.click(screen.getByText('Submit'))
+    expect(testLocation.pathname).toBe("/select-character")
+    
+    for (let i = 0; i < players.length; i++) {
+      return 
+    }
+
+    let playerOneDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 1 select your character/i }))
+    let playerTwoDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 2 select your character/i }))  
+    let playerThreeDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 3 select your character/i }))
+    let playerFourDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 4 select your character/i }))
+    let playerFiveDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 5 select your character/i }))
+    let playerSixDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 6 select your character/i }))
+    let playerSevenDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 7 select your character/i }))
+    let playerEightDropDown = await waitFor (() => screen.getByRole('combobox', { name: /player 8 select your character/i }))
+    expect(playerEightDropDown).toBeInTheDocument()
+
+    let button = screen.getByRole('button', { name: /submit/i })
+    userEvent.selectOptions(playerOneDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerTwoDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerThreeDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerFourDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerFiveDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerSixDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerSevenDropDown, "Stanley Shunpike")
+    userEvent.selectOptions(playerEightDropDown, "Stanley Shunpike")
+    expect(button).toBeInTheDocument()
+    userEvent.click(button) 
+    expect(testLocation.pathname).toBe("/quickstart")
+    
+    let quickstartButton = screen.getByRole('button', { name: /Start/i })
+    expect(quickstartButton).toBeInTheDocument()
+    userEvent.click(quickstartButton) 
+    expect(testLocation.pathname).toBe("/gameplay")
+    
+    let playerOneName = await waitFor (() => screen.getByText(/player 1/i)) 
+    let playerTwoName = screen.getByRole('heading', { name: /player 2/i })
+    let playerThreeName = screen.getByRole('heading', { name: /player 3/i })
+    let playerFourName = screen.getByRole('heading', { name: /player 4/i })
+    let playerFiveName = screen.getByRole('heading', { name: /player 5/i })
+    let playerSixName = screen.getByRole('heading', { name: /player 6/i })
+    let playerSevenName = screen.getByRole('heading', { name: /player 7/i })
+    let playerEightName = screen.getByRole('heading', { name: /player 8/i })
+    
+    expect(playerOneName).toBeInTheDocument()
+    expect(playerTwoName).toBeInTheDocument()
+    expect(playerThreeName).toBeInTheDocument()
+    expect(playerFourName).toBeInTheDocument()
+    expect(playerFiveName).toBeInTheDocument()
+    expect(playerSixName).toBeInTheDocument()
+    expect(playerSevenName).toBeInTheDocument()
+    expect(playerEightName).toBeInTheDocument()
+  }) 
 })
 
