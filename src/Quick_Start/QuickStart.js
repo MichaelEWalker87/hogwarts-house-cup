@@ -34,6 +34,14 @@ const QuickStart = () => {
             Rules
           </button>
         </Link>
+        <Link 
+          to="/" 
+          label="Home"
+        >
+          <button>
+              Restart
+          </button>
+        </Link>
       </section>
     </section>
   )

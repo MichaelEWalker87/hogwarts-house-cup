@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './Pick_Player.css'
 
 class PickPlayer extends Component {
@@ -79,6 +80,14 @@ class PickPlayer extends Component {
                         Submit
                     </button>
                     {this.state.redirect && <Redirect to="/quickstart"/>}
+                    <Link 
+                        to="/" 
+                        label="Home"
+                        >
+                        <button>
+                            Restart
+                        </button>
+                    </Link>
             </section>  
         )
     }
