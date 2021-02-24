@@ -50,7 +50,6 @@ class PickPlayer extends Component {
     }
 
     handleChange = (event) => {
-        console.log(this.lockPick())
         let copy = this.state.currentPlayers.concat()
         copy[+event.target.name] = event.target.value 
         this.setState({currentPlayers:copy});
@@ -74,7 +73,7 @@ class PickPlayer extends Component {
                 {this.populatePlayers()}
                     <button
                         type='button'
-                        disabled={this.state.currentPlayers.includes("-1")}
+                        disabled={this.state.currentPlayers.includes("-1") || this.state.currentPlayers.length === 0 }
                         onClick={this.handleSubmit}
                     >
                         Submit
