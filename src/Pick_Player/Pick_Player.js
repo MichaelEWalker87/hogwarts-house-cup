@@ -8,7 +8,7 @@ class PickPlayer extends Component {
         super(props)
     
         this.state = {
-            currentPlayers: [],
+            currentPlayers: this.lockPick(),
             error: '', 
             redirect: false,
         }
@@ -39,11 +39,19 @@ class PickPlayer extends Component {
          }
          return allPlayers
     }
-    
+
+    lockPick = (playerNum) => {
+        let lockPlayers = []
+        for (let i = 0; i < this.props.playerCount; i++) {
+            lockPlayers.push("-1")
+        }
+        return lockPlayers
+    }
 
     handleChange = (event) => {
+        console.log(this.lockPick())
         let copy = this.state.currentPlayers.concat()
-        copy[+event.target.name] = event.target.value
+        copy[+event.target.name] = event.target.value 
         this.setState({currentPlayers:copy});
     }
 
@@ -65,7 +73,7 @@ class PickPlayer extends Component {
                 {this.populatePlayers()}
                     <button
                         type='button'
-                        disabled={this.state.currentPlayers.length != this.props.playerCount}
+                        disabled={this.state.currentPlayers.includes("-1")}
                         onClick={this.handleSubmit}
                     >
                         Submit
