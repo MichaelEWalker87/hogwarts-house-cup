@@ -83,7 +83,7 @@ class PickPlayer extends Component {
                         to="/" 
                         label="Home"
                         >
-                        <button>
+                        <button className="restart">
                             Restart
                         </button>
                     </Link>
