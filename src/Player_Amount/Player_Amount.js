@@ -20,8 +20,17 @@ export class PlayerAmount extends Component {
   render() {
     return (
         <section className="amount-section">
-        <label className="pick-amount-lable">Pick The Amount Of Players</label>
-        <span>C</span><span>S</span><span>S</span><span>&nbsp;</span><span>S</span><span>m</span><span>o</span><span>k</span><span>y</span><span>&nbsp;</span><span>T</span><span>e</span><span>x</span><span>t</span><span>&nbsp;</span><span>E</span><span>f</span><span>f</span><span>e</span><span>c</span><span>t</span>
+          <section className="pick-player-title pick-player-title-color">
+            <span>P</span><span>i</span><span>c</span>
+            <span>k</span><span>&nbsp;</span><span>T</span>
+            <span>h</span><span>e</span><span>&nbsp;</span>
+            <span>A</span><span>m</span><span>o</span>
+            <span>u</span><span>n</span><span>t</span>
+            <span>&nbsp;</span><span>O</span><span>f</span>
+            <span>&nbsp;</span><span>P</span><span>l</span>
+            <span>a</span><span>y</span><span>e</span>
+            <span>r</span><span>s</span>
+          </section>
         <input
           type='number'
           name='players'

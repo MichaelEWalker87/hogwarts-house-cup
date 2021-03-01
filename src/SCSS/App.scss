@@ -19,7 +19,6 @@ body{
 }
 
 .amount-section{
-  display: grid;
   justify-items: center;
 }
 
@@ -33,46 +32,26 @@ body{
 }
 
 
-span {
-  text-shadow: 0 0 0 whitesmoke;
-  animation: smoky 5s 0s;
-  animation-direction: reverse;
-}
-span:nth-child(even){
-  animation-name: smoky-mirror;
-}
-
-@keyframes smoky {
-  60% {
-    text-shadow: 0 0 40px whitesmoke;
-  }
-  to {
-    transform:
-      translate3d(15rem,-8rem,0)
-      rotate(-40deg)
-      skewX(70deg)
-      scale(1.5);
-    text-shadow: 0 0 20px whitesmoke;
-    opacity: 0;
+.pick-player-title{
+  span {
+    font-size: 2em;
+    font-family: "ParryHotter", sans-serif;
+    text-shadow: 0 0 0 whitesmoke;
+    animation-name: example 3s 0s reverse;
+    animation: smoky 3s 0s reverse;
+    overflow: hidden;
+    display: inline-block;
+    backface-visibility: hidden;
+    :nth-child(even){
+      animation-name: smoky-mirror;
+    }
   }
 }
 
-@keyframes smoky-mirror {
-  60% {
-    text-shadow: 0 0 40px whitesmoke; }
-  to {
-    transform:
-      translate3d(18rem,-8rem,0)
-      rotate(-40deg) 
-      skewX(-70deg)
-      scale(2);
-     text-shadow: 0 0 20px whitesmoke;
-    opacity: 0;
-  }
-}
 
-@for $item from 1 through 21 {
-  span:nth-of-type(#{$item}){ 
-    animation-delay: #{(1 + ($item/10))}s; 
+  .pick-player-title-color{
+    animation: example 8s 0s reverse infinite;
+    animation-delay: 3.5s;
+
   }
-} 
+
