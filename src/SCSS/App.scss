@@ -1,0 +1,78 @@
+.all-files{
+  text-align: center;
+}
+
+body{
+  background-image: url("../images/Hogwarts-Express.png");
+  display: flex;
+}
+.pick-amount-lable{
+  font-family: "ParryHotter", sans-serif;
+  font-size: 3em;
+}
+.amount-picker{
+  font-family: "ParryHotter", sans-serif;
+  text-align-last: center;
+  font-size: 3em;
+  width: 1em;
+  height: fit-content;
+}
+
+.amount-section{
+  display: grid;
+  justify-items: center;
+}
+
+.login-submit{
+  border-radius: 1em;
+  height: 100%;
+  width: 100%;
+  border:none;
+  background-color: crimson;
+
+}
+
+
+span {
+  text-shadow: 0 0 0 whitesmoke;
+  animation: smoky 5s 0s;
+  animation-direction: reverse;
+}
+span:nth-child(even){
+  animation-name: smoky-mirror;
+}
+
+@keyframes smoky {
+  60% {
+    text-shadow: 0 0 40px whitesmoke;
+  }
+  to {
+    transform:
+      translate3d(15rem,-8rem,0)
+      rotate(-40deg)
+      skewX(70deg)
+      scale(1.5);
+    text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+@keyframes smoky-mirror {
+  60% {
+    text-shadow: 0 0 40px whitesmoke; }
+  to {
+    transform:
+      translate3d(18rem,-8rem,0)
+      rotate(-40deg) 
+      skewX(-70deg)
+      scale(2);
+     text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+@for $item from 1 through 21 {
+  span:nth-of-type(#{$item}){ 
+    animation-delay: #{(1 + ($item/10))}s; 
+  }
+} 
