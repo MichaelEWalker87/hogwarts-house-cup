@@ -62,6 +62,7 @@ class App extends Component {
         />
         <Route exact path='/select-character' render={ () => 
           <PickPlayer 
+            className="pick-player-app"
             playerCount={+this.state.playerCount} 
             updateselectedPlayers={this.updateselectedPlayers}
             characterNames={this.state.characterNames}

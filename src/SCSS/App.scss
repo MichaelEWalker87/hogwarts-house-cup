@@ -2,10 +2,12 @@
   text-align: center;
 }
 
-body{
-  background-image: url("../images/Hogwarts-Express.png");
-  display: flex;
-}
+// body{
+//   background-image: url("../images/Hogwarts-Express.png");
+//   display: flex;
+//   justify-content: center;
+// }
+
 .pick-amount-lable{
   font-family: "ParryHotter", sans-serif;
   font-size: 3em;
@@ -19,6 +21,14 @@ body{
 }
 
 .amount-section{
+  background: url("../images/Hogwarts-Express.png") no-repeat fixed; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
   justify-items: center;
 }
 
@@ -47,7 +57,6 @@ body{
     }
   }
 }
-
 
   .pick-player-title-color{
     animation: example 8s 0s reverse infinite;
