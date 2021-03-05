@@ -17,7 +17,19 @@
   text-align-last: center;
   font-size: 3em;
   width: 1em;
+  grid-row-start: 2;
+  grid-column-start: 1;
   height: fit-content;
+  grid-row-start: 2;
+  align-self: center;
+  grid-row-end: span 2;
+  border-color: rgb(174,126,78);
+  border-width: 0.2em;
+  border-style: solid;
+  border-radius: 1em;
+  outline: none;
+  border-left-width: thick;
+  border-right-width: thick;
 }
 
 .amount-section{
@@ -34,17 +46,35 @@
 
 .login-submit{
   border-radius: 1em;
-  height: 100%;
-  width: 100%;
+  width: 50em;
   border:none;
   background-color: crimson;
-
 }
 
+.ticket{
+  background: url("../images/Ticket.png") no-repeat fixed;
+  // min-width: 100%;
+  // min-height: 100%;
+  top: 0; 
+  left: 0; 
+  bottom: 0;
+  right: 0;
+  opacity: 0.95;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  position: fixed;
+  justify-items: center; 
+  background-position: center;
+}
 
 .pick-player-title{
+  z-index: -2;
+  grid-column-start: 1;
+  grid-row-end: span 2;
+  grid-row-start: 1;
+  align-self: end;
   span {
-    font-size: 2em;
+    font-size: 4em;
     font-family: "ParryHotter", sans-serif;
     text-shadow: 0 0 0 whitesmoke;
     animation-name: example 3s 0s reverse;
