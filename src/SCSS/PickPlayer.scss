@@ -4,11 +4,64 @@
 }
 
 .plyer-picker-inside-section{
-  background-color: $background-color-brown;
+  background-color: rgba(248, 241, 241, 0.842);
   background-size: 2em;
   width: 40%;
   min-width: 600px;
   margin-left: 1em;
   margin-top: 2em;
   min-height: 19em;
+}
+
+.character-dropdown{
+ color: blue;
+ margin: 1em;
+ font-family: 'Playfair Display', serif;
+ font-size: 2em;
+}
+.character-dropdown-select{
+  font-family: 'Playfair Display', serif;
+  font-size: .6em;
+}
+
+.character-dropdown-lable{
+  font-size: 0.9em;
+  display: inline-grid;
+}
+
+.character-dropdown-select{
+  margin-top: 1em;
+}
+
+.pick-player-submit{
+  margin: 1em;
+  width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1.3em;
+  @extend %button-base; 
+  border-color: $button-backgroud;
+  background-color: $background-color-brown;
+}
+
+
+.pick-player-submit:hover:enabled{
+  background-color: darken($color: $background-color-brown, $amount: 10.75);
+}
+
+
+.restart{
+  margin: 1em;
+  width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1.3em;
+  @extend %button-base; 
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.137);
+
+}
+
+.restart:hover{
+  background-color: rgba(255, 0, 0, 0.383);
 }

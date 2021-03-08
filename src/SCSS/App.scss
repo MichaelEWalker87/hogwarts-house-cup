@@ -44,15 +44,10 @@
 }
 
 .login-submit{
-  border-radius: 1em;
   width: 20em;
-  outline: none;
-  border:none;
-  cursor: pointer;
-  font-family: 'Playfair Display', serif;
+  @extend %button-base;
   font-size: 2em;
   border-color: $button-backgroud;
-  border-style: solid;
   background-color: $background-color-brown;
 }
 

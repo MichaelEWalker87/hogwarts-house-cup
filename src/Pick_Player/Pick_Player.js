@@ -77,6 +77,7 @@ class PickPlayer extends Component {
                             type='button'
                             disabled={this.state.currentPlayers.includes("-1") || this.state.currentPlayers.length === 0 }
                             onClick={this.handleSubmit}
+                            className="pick-player-submit"
                         >
                             Submit
                         </button>

@@ -8,7 +8,7 @@
 $background-color-brown: rgba(255, 228, 196, 0.792);
 $button-backgroud: rgba(174, 126, 78, 0.539);
 $button-border: rgb(174,126,78);
-
+$restart-background: rgba(255, 0, 0, 0.137);
 
 //background image 
 %background-image{
@@ -18,6 +18,15 @@ $button-border: rgb(174,126,78);
   position: fixed; 
   top: 0; 
   left: 0; 
+}
+
+%button-base{
+  outline: none;
+  border:none;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  border-style: solid;
+  border-radius: 1em;
 }
 
 // Text annomation 
