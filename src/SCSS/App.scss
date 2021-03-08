@@ -44,11 +44,23 @@
   justify-items: center;
 }
 
+.link-pick-amount{
+  height: min-content;
+  place-self: center;
+  border-radius: 2em;
+}
+
 .login-submit{
   border-radius: 1em;
-  width: 50em;
+  width: 20em;
+  outline: none;
   border:none;
-  background-color: crimson;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  border-color: rgb(174,126,78);
+  border-style: solid;
+  background-color: rgba(174, 126, 78, 0.539);
 }
 
 .ticket{

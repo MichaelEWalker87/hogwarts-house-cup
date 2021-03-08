@@ -44,9 +44,11 @@ export class PlayerAmount extends Component {
             <Link 
               to="/select-character"
               label="select-character"
+              className="link-pick-amount"
             >
               <button
                 role="button"
+                href="/select-character"
                 disabled={this.state.players > 8 || this.state.players < 2}
                 className="login-submit"
                 onClick={() => this.props.updatePlayercount(this.state.players)}
