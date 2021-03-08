@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types'
-import './Player_Amount.css'
+import PropTypes from 'prop-types';
+import './Player_Amount.css';
+import '../SCSS/Base.scss';
+import audio from "../images/harry_potter_theme.mp3"; 
+
 
 export class PlayerAmount extends Component {
   constructor(props) {
@@ -57,6 +60,11 @@ export class PlayerAmount extends Component {
               </button>
             </Link>
         </section>
+        <audio src={audio} id="myaudio" className="audio" controls type="audio/mpeg" autoPlay></audio>
+        <script>
+          var audio = document.getElementById("myaudio");
+          audio.volume = 0.2;
+        </script>
       </section>
     )
   }

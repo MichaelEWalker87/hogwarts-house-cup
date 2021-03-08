@@ -96,6 +96,14 @@
   }
 }
 
+.audio{
+  outline: none;
+  float: right;
+  filter: invert(1);
+  margin: 1em;
+  opacity: 0.6;
+}
+
   .pick-player-title-color{
     animation: example 8s 0s alternate-reverse infinite;
     animation-delay: 2s;
