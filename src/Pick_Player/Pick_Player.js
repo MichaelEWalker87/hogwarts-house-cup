@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './Pick_Player.css'
+import '../SCSS/Base.scss'
 
 class PickPlayer extends Component {
     constructor(props) {
@@ -25,13 +25,14 @@ class PickPlayer extends Component {
                     title="character-dropdown" 
                     className="character-dropdown"
                 >
-                    <label>
+                    <label className="character-dropdown-lable">
                         Player {(playerNumber + 1)} select your character
                         <select 
+                            className="character-dropdown-select"
                             name={(playerNumber)}
                             onChange={this.handleChange}
                         >
-                            <option value={-1}>Pick A Character</option>
+                            <option value={-1} className="character-dropdown-select-two">Pick A Character</option>
                             {this.props.characterNames}
                         </select>
                     </label>
@@ -67,26 +68,28 @@ class PickPlayer extends Component {
     render() {
         return (
             <section className="pick-player">
-                <h2>
-                    {this.state.error}
-                </h2>
-                {this.populatePlayers()}
-                    <button
-                        type='button'
-                        disabled={this.state.currentPlayers.includes("-1") || this.state.currentPlayers.length === 0 }
-                        onClick={this.handleSubmit}
-                    >
-                        Submit
-                    </button>
-                    {this.state.redirect && <Redirect to="/quickstart"/>}
-                    <Link 
-                        to="/" 
-                        label="Home"
+                <section className="plyer-picker-inside-section">
+                    <h2 className="error-message">
+                        {this.state.error}
+                    </h2>
+                    {this.populatePlayers()}
+                        <button
+                            type='button'
+                            disabled={this.state.currentPlayers.includes("-1") || this.state.currentPlayers.length === 0 }
+                            onClick={this.handleSubmit}
                         >
-                        <button className="restart">
-                            Restart
+                            Submit
                         </button>
-                    </Link>
+                        {this.state.redirect && <Redirect to="/quickstart"/>}
+                        <Link 
+                            to="/" 
+                            label="Home"
+                            >
+                            <button className="restart">
+                                Restart
+                            </button>
+                        </Link>
+                </section>
             </section>  
         )
     }

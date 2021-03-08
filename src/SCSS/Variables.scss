@@ -3,8 +3,22 @@
   src: url("../fonts/ParryHotter.ttf")format("truetype");
 }
 
-$background-color: rgba(255, 228, 196, 0.792);
+// colors
 
+$background-color-brown: rgba(255, 228, 196, 0.792);
+$button-backgroud: rgba(174, 126, 78, 0.539);
+$button-border: rgb(174,126,78);
+
+
+//background image 
+%background-image{
+  min-width: 100%;
+  min-height: 100%;
+  justify-items: center;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+}
 
 // Text annomation 
 
@@ -15,14 +29,15 @@ $background-color: rgba(255, 228, 196, 0.792);
     color: rgb(235, 192, 0);
   }
   to {
+    transition-delay: ease-out; 
     transform:
       translate3d(-2em, -8em, -4em)
       skewX(70deg)
       rotate(55deg)
-      scale(1.5);
+      scale(2);
     color: rgb(235, 192, 0);
     text-shadow: 0 0 20px whitesmoke;
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -34,14 +49,15 @@ $background-color: rgba(255, 228, 196, 0.792);
     color: rgb(255, 15, 15);
   }
   to {
+    transition-delay: ease-out; 
     transform:
-      translate3d(-2em, -8em, -4em)
+      translate3d(-2em, -4em, -4em)
       skewX(70deg)
       rotate(-25deg)
       scale(2);
       color: rgb(141, 8, 141);
      text-shadow: 0 0 20px whitesmoke;
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -50,12 +66,15 @@ $background-color: rgba(255, 228, 196, 0.792);
   25%  {color:yellow; left:200px; top:0px;}
   50%  {color:blue; left:200px; top:200px;}
   75%  {color:green; left:0px; top:200px;}
-  100% {color:red; left:0px; top:0px;}
+  100% {color:red; left:0px; top:0px;
+  transform:
+    scale(1.03);
+  }
 }
 
 
-@for $item from 1 through 26 {
-  span:nth-of-type(#{$item}){ 
-    animation-delay: #{(1 + ($item/15))}s; 
-  }
-} 
+// @for $item from 1 through 26 {
+//   span:nth-of-type(#{$item}){ 
+//     animation-delay: #{(1 + ($item/15))}s; 
+//   }
+// } 

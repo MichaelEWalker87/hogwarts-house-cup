@@ -1,0 +1,14 @@
+.pick-player{
+  background: url("../images/Great-Hall.png") no-repeat fixed; 
+  @extend %background-image;
+}
+
+.plyer-picker-inside-section{
+  background-color: $background-color-brown;
+  background-size: 2em;
+  width: 40%;
+  min-width: 600px;
+  margin-left: 1em;
+  margin-top: 2em;
+  min-height: 19em;
+}
