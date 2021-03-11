@@ -61,10 +61,6 @@ export class PlayerAmount extends Component {
             </Link>
         </section>
         <audio src={audio} id="myaudio" className="audio" controls type="audio/mpeg" autoPlay></audio>
-        <script>
-          var audio = document.getElementById("myaudio");
-          audio.volume = 0.2;
-        </script>
       </section>
     )
   }

@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../SCSS/Base.scss'
+import greatHall from "../images/hogwarts_great_hall.mp3"; 
 
 class PickPlayer extends Component {
     constructor(props) {
@@ -68,6 +69,7 @@ class PickPlayer extends Component {
     render() {
         return (
             <section className="pick-player">
+                <audio src={greatHall}  className="audio" controls type="audio/mpeg" autoPlay></audio>
                 <section className="plyer-picker-inside-section">
                     <h2 className="error-message">
                         {this.state.error}

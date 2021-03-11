@@ -30,6 +30,21 @@ $restart-background: rgba(255, 0, 0, 0.137);
   border-radius: 1em;
 }
 
+%button-most{
+  margin: 1em;
+  width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1.3em;
+}
+//audio controls 
+%audio-c{
+  outline: none;
+  filter: invert(1);
+  margin: 1em;
+  opacity: 0.6;
+}
+
 // Text annomation 
 
 @keyframes smoky {

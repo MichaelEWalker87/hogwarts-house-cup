@@ -34,11 +34,7 @@
 }
 
 .pick-player-submit{
-  margin: 1em;
-  width: fit-content;
-  padding-left: 1em;
-  padding-right: 1em;
-  font-size: 1.3em;
+  @extend %button-most;
   @extend %button-base; 
   border-color: $button-backgroud;
   background-color: $background-color-brown;
@@ -51,11 +47,7 @@
 
 
 .restart{
-  margin: 1em;
-  width: fit-content;
-  padding-left: 1em;
-  padding-right: 1em;
-  font-size: 1.3em;
+  @extend %button-most;
   @extend %button-base; 
   border-color: red;
   background-color: rgba(255, 0, 0, 0.137);
@@ -73,4 +65,8 @@
   border-radius: 1em;
   border-width: 0.5em;
   border-color: $button-backgroud;
+}
+
+.pick-player{
+  background-size: cover;
 }
