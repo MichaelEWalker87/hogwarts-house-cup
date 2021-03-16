@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types'
-import './Pick_Player.css'
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import '../SCSS/Base.scss'
+import greatHall from "../images/hogwarts_great_hall.mp3"; 
 
 class PickPlayer extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-            currentPlayers: [],
+            currentPlayers: this.lockPick(),
             error: '', 
             redirect: false,
         }
@@ -24,13 +26,14 @@ class PickPlayer extends Component {
                     title="character-dropdown" 
                     className="character-dropdown"
                 >
-                    <label>
+                    <label className="character-dropdown-lable">
                         Player {(playerNumber + 1)} select your character
                         <select 
+                            className="character-dropdown-select"
                             name={(playerNumber)}
                             onChange={this.handleChange}
                         >
-                            <option value={-1}>Pick A Character</option>
+                            <option value={-1} className="character-dropdown-select-two">Pick A Character</option>
                             {this.props.characterNames}
                         </select>
                     </label>
@@ -39,11 +42,18 @@ class PickPlayer extends Component {
          }
          return allPlayers
     }
-    
+
+    lockPick = (playerNum) => {
+        let lockPlayers = []
+        for (let i = 0; i < this.props.playerCount; i++) {
+            lockPlayers.push("-1")
+        }
+        return lockPlayers
+    }
 
     handleChange = (event) => {
         let copy = this.state.currentPlayers.concat()
-        copy[+event.target.name] = event.target.value
+        copy[+event.target.name] = event.target.value 
         this.setState({currentPlayers:copy});
     }
 
@@ -59,18 +69,30 @@ class PickPlayer extends Component {
     render() {
         return (
             <section className="pick-player">
-                <h2>
-                    {this.state.error}
-                </h2>
-                {this.populatePlayers()}
-                    <button
-                        type='button'
-                        disabled={this.state.currentPlayers.length != this.props.playerCount}
-                        onClick={this.handleSubmit}
-                    >
-                        Submit
-                    </button>
-                    {this.state.redirect && <Redirect to="/quickstart"/>}
+                <audio src={greatHall}  className="audio" controls type="audio/mpeg" autoPlay></audio>
+                <section className="plyer-picker-inside-section">
+                    <h2 className="error-message">
+                        {this.state.error}
+                    </h2>
+                    {this.populatePlayers()}
+                        <button
+                            type='button'
+                            disabled={this.state.currentPlayers.includes("-1") || this.state.currentPlayers.length === 0 }
+                            onClick={this.handleSubmit}
+                            className="pick-player-submit"
+                        >
+                            Submit
+                        </button>
+                        {this.state.redirect && <Redirect to="/quickstart"/>}
+                        <Link 
+                            to="/" 
+                            label="Home"
+                            >
+                            <button className="restart">
+                                Restart
+                            </button>
+                        </Link>
+                </section>
             </section>  
         )
     }

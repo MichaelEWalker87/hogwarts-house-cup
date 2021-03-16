@@ -1,0 +1,103 @@
+.all-files{
+  text-align: center;
+}
+
+// body{
+//   background-image: url("../images/Hogwarts-Express.png");
+//   display: flex;
+//   justify-content: center;
+// }
+
+.pick-amount-lable{
+  font-family: "ParryHotter", sans-serif;
+  font-size: 3em;
+}
+.amount-picker{
+  font-family: "ParryHotter", sans-serif;
+  text-align-last: center;
+  font-size: 3em;
+  width: 1em;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  height: fit-content;
+  grid-row-start: 2;
+  align-self: center;
+  grid-row-end: span 2;
+  border-color: rgb(174,126,78);
+  border-width: 0.2em;
+  border-style: solid;
+  border-radius: 1em;
+  outline: none;
+  border-left-width: thick;
+  border-right-width: thick;
+}
+
+.amount-section{
+  background: url("../images/Hogwarts-Express.png") no-repeat fixed; 
+  @extend %background-image;
+}
+
+.link-pick-amount{
+  height: min-content;
+  place-self: center;
+  border-radius: 2em;
+}
+
+.login-submit{
+  width: 20em;
+  @extend %button-base;
+  font-size: 2em;
+  border-color: $button-backgroud;
+  background-color: $background-color-brown;
+}
+
+.login-submit:hover{
+  background-color: darken($color: $background-color-brown, $amount: 10.75);
+}
+
+.ticket{
+  background: url("../images/Ticket.png") no-repeat fixed;
+  top: 0; 
+  left: 0; 
+  bottom: 0;
+  right: 0;
+  opacity: 0.95;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  position: fixed;
+  justify-items: center; 
+  background-position: center;
+}
+
+.pick-player-title{
+  z-index: -2;
+  grid-column-start: 1;
+  grid-row-end: span 2;
+  grid-row-start: 1;
+  align-self: end;
+  span {
+    font-size: 4em;
+    font-family: "ParryHotter", sans-serif;
+    text-shadow: 0 0 0 whitesmoke;
+    animation: smoky 4s 0s reverse;
+    overflow: hidden;
+    display: inline-block;
+    backface-visibility: hidden;
+    :nth-child(even){
+      animation-name: smoky-mirror;
+    }
+  }
+}
+
+.audio{
+  @extend %audio-c;
+  opacity: 0.6;
+  float: right;
+}
+
+.pick-player-title-color{
+  animation: example 8s 0s alternate-reverse infinite;
+  animation-delay: 2s;
+
+}
+

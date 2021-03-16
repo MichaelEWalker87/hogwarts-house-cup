@@ -6,7 +6,7 @@ import PickPlayer from './Pick_Player/Pick_Player.js'
 import Gameplay from './Gameplay/Gameplay.js'
 import { getCharacter } from './Api_calls/API.js'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import './App.css'
+import './SCSS/Base.scss'
 
 class App extends Component {
   constructor() {
@@ -62,6 +62,7 @@ class App extends Component {
         />
         <Route exact path='/select-character' render={ () => 
           <PickPlayer 
+            className="pick-player-app"
             playerCount={+this.state.playerCount} 
             updateselectedPlayers={this.updateselectedPlayers}
             characterNames={this.state.characterNames}

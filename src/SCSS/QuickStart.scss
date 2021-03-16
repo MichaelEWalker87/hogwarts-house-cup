@@ -1,0 +1,61 @@
+.quick-start{
+  background: url("../images/Poly-juice-Potion.png") no-repeat fixed; 
+  @extend %background-image;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Playfair Display', serif;
+}
+
+.background-quickstart{
+  background-color: rgba(248, 241, 241, 0.842);
+  max-width: 34em;
+  border-style: solid;
+  border-radius: 1em;
+  border-width: 0.5em;
+  height: fit-content;
+  border-color: rgba(174, 126, 78, 0.539);
+  align-self: auto;
+  margin-left: 2em;
+  margin-bottom: 4em;
+  order: 2;
+  position: inherit;
+  bottom: 5%;
+  h3{
+    font-size: 2em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+
+
+.quick-start-menu{
+  margin: 1rem;
+  font-size: 1.5em;
+}
+
+.quick-start-buttons{
+  margin: 1rem;
+}
+
+.add-rule-button{
+  font-size: 1.5em;
+}
+
+.audio-no-good{
+  @extend %audio-c;
+  order: 1;
+  align-self: flex-end;
+}
+
+.quick-start-buttons{
+  @extend %button-most;
+  @extend %button-base; 
+  font-size: 1.3em;
+  border-color: rgb(0, 150, 0);
+  background-color: rgba(0, 255, 64, 0.137);
+}
+
+.quick-start-buttons:hover{
+  background-color: rgba(0, 255, 64, 0.335);
+}

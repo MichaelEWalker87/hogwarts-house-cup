@@ -1,8 +1,16 @@
-export const getCharacter = () => {
+export const getCharacter = async () => {
+  const respose = await fetch('https://fe-cors-proxy.herokuapp.com', {
+    headers: {
+      "Target-URL": `https://potter-server.herokuapp.com/api/v1/characters`
+    }
+  })
   try {
-    return fetch (`https://www.potterapi.com/v1/characters?key=$2a$10$yK${process.env.REACT_APP_API_KEY}`)
-    .then(respose => respose.json())
+    if (respose.ok) {
+      return respose.json();
+    }
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
+
+

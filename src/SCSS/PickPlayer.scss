@@ -1,0 +1,72 @@
+.pick-player{
+  background: url("../images/Great-Hall.png") no-repeat fixed; 
+  @extend %background-image;
+}
+
+.plyer-picker-inside-section{
+  background-color: rgba(248, 241, 241, 0.842);
+  background-size: 2em;
+  width: 40%;
+  min-width: 600px;
+  margin-left: 1em;
+  margin-top: 2em;
+  min-height: 19em;
+}
+
+.character-dropdown{
+ color: blue;
+ margin: 1em;
+ font-family: 'Playfair Display', serif;
+ font-size: 2em;
+}
+.character-dropdown-select{
+  font-family: 'Playfair Display', serif;
+  font-size: .6em;
+}
+
+.character-dropdown-lable{
+  font-size: 0.9em;
+  display: inline-grid;
+}
+
+.character-dropdown-select{
+  margin-top: 1em;
+}
+
+.pick-player-submit{
+  @extend %button-most;
+  @extend %button-base; 
+  border-color: $button-backgroud;
+  background-color: $background-color-brown;
+}
+
+
+.pick-player-submit:hover:enabled{
+  background-color: darken($color: $background-color-brown, $amount: 10.75);
+}
+
+
+.restart{
+  @extend %button-most;
+  @extend %button-base; 
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.137);
+
+}
+
+.restart:hover{
+  background-color: rgba(255, 0, 0, 0.383);
+}
+
+.plyer-picker-inside-section{
+  overflow: auto;
+  max-height: 50em;
+  border-style: solid;
+  border-radius: 1em;
+  border-width: 0.5em;
+  border-color: $button-backgroud;
+}
+
+.pick-player{
+  background-size: cover;
+}

@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "ParryHotter";
+  src: url("../fonts/ParryHotter.ttf")format("truetype");
+}
+
+// colors
+
+$background-color-brown: rgba(255, 228, 196, 0.792);
+$button-backgroud: rgba(174, 126, 78, 0.539);
+$button-border: rgb(174,126,78);
+$restart-background: rgba(255, 0, 0, 0.137);
+
+//background image 
+%background-image{
+  min-width: 100%;
+  min-height: 100%;
+  justify-items: center;
+  position: fixed; 
+  background-size: cover;
+  top: 0; 
+  left: 0; 
+}
+
+%button-base{
+  outline: none;
+  border:none;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  border-style: solid;
+  border-radius: 1em;
+}
+
+%button-most{
+  margin: 1em;
+  width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1.3em;
+}
+//audio controls 
+%audio-c{
+  outline: none;
+  filter: invert(1);
+  margin: 1em;
+  opacity: 0.6;
+}
+
+// Text annomation 
+
+@keyframes smoky {
+  80% {
+    text-shadow: 0 0 40px whitesmoke;
+    filter:blur(50px) hue-rotate(190deg);
+    color: rgb(235, 192, 0);
+  }
+  to {
+    transition-delay: ease-out; 
+    transform:
+      translate3d(-2em, -8em, -4em)
+      skewX(70deg)
+      rotate(55deg)
+      scale(2);
+    color: rgb(235, 192, 0);
+    text-shadow: 0 0 20px whitesmoke;
+    opacity: 1;
+  }
+}
+
+@keyframes smoky-mirror {
+  80% {
+    text-shadow: 0 0 40px whitesmoke; 
+    filter:blur(50px) hue-rotate(90deg);
+    opacity: 0.75;
+    color: rgb(255, 15, 15);
+  }
+  to {
+    transition-delay: ease-out; 
+    transform:
+      translate3d(-2em, -4em, -4em)
+      skewX(70deg)
+      rotate(-25deg)
+      scale(2);
+      color: rgb(141, 8, 141);
+     text-shadow: 0 0 20px whitesmoke;
+    opacity: 1;
+  }
+}
+
+@keyframes example {
+  0%   {color:red; left:0px; top:0px;}
+  25%  {color:yellow; left:200px; top:0px;}
+  50%  {color:blue; left:200px; top:200px;}
+  75%  {color:green; left:0px; top:200px;}
+  100% {color:red; left:0px; top:0px;
+  transform:
+    scale(1.03);
+  }
+}
+
+
+// @for $item from 1 through 26 {
+//   span:nth-of-type(#{$item}){ 
+//     animation-delay: #{(1 + ($item/15))}s; 
+//   }
+// } 
